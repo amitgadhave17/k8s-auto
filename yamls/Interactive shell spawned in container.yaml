@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: interactive-shell
+spec:
+  containers:
+  - name: interactive-shell
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', 'sh -i']

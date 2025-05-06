@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: process-exec-from-memory
+spec:
+  containers:
+  - name: process-exec-from-memory
+    image: angelrita/memfd-exec:latest
+    #imagePullPolicy: Never
+    #command: ["sleep"]
+    #args: ["infinity"]

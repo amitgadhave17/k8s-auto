@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 
+spec:
+  containers:
+  - name: 
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', '']
