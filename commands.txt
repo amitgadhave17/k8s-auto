@@ -1,5 +1,14 @@
-  
-1. Exploit-vsftpd
+Requirements:
+
+   apt install python3
+   apt install python3-pip
+   pip3 install kubernetes
+   export KUBECONFIG=/etc/kubernetes/admin.conf
+   python3 deploy_pod.py yamls/Clear\ System\ Logs.yaml
+   
+tail -f /usr/local/qualys/runtime-sensor/data/logs/runtime_sensor.log | grep Process-exec
+
+1. Exploit-vsftpd --need to write yaml for this
 ------------------------------------------------------
 2. Credential access bash history'
 cat /.bash_history
