@@ -36,9 +36,11 @@ def get_pod_name_from_yaml(file_path):
                 return doc["metadata"]["name"]
     return None
 
-def wait_for_pod_ready(pod_name, namespace="default", timeout=60):
+def wait_for_pod_ready(pod_name, namespace="default", timeout=1000):
     print(f"[{pod_name}] Waiting to be ready...")
-    for _ in range(timeout):
+    #for _ in range(timeout):
+    while True: 
+    # Infinite loop to keep checking the pod status 
         pod = core_v1_api.read_namespaced_pod(name=pod_name, namespace=namespace)
         if pod.status.phase == "Running":
             print(f"[{pod_name}] is running.")

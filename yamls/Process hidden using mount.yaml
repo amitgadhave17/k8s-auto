@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Process-hidden-using-mount
+  name: process-hidden-using-mount
 spec:
   containers:
-  - name: Process-hidden-using-mount
+  - name: process-hidden-using-mount
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
