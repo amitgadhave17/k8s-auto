@@ -1,0 +1,20 @@
+   apt install python3
+   apt install python3-pip
+   pip3 install kubernetes
+   export KUBECONFIG=/etc/kubernetes/admin.conf
+   python3 deploy_pod.py yamls/Clear\ System\ Logs.yaml
+   tail -f /usr/local/qualys/runtime-sensor/data/logs/runtime_sensor.log | grep Process-exec
+
+
+yaml format:
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 
+spec:
+  containers:
+  - name: 
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', '']
