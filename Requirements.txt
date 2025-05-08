@@ -5,7 +5,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 python3 deploy_pod.py yamls/Clear\ System\ Logs.yaml
 tail -f /usr/local/qualys/runtime-sensor/data/logs/runtime_sensor.log | grep Process-exec
 
-
+-----------------------------------------------------------------------------------------------
 yaml format:
 apiVersion: v1
 kind: Pod
