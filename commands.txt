@@ -1,6 +1,6 @@
 This file is just for informative purpose. Scripts not using this file for any purpose. Script uses yaml file for each in the 'yamls' folder.
 ------------------------------------------------------
-1. Exploit vsftpd Vulnerability --need to write yaml for this
+1. Exploit vsftpd Vulnerability 
 #This command creates shell process from vsftpd. This is not exact use case of vsftpd. For time being, we have created this.
 cp /bin/bash vsftpd; ./vsftpd -c /bin/sh
 ------------------------------------------------------

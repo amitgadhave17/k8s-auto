@@ -43,7 +43,7 @@ def main():
             details= extract_info_from_file(os.path.join(folder, filename))
             if details:
                 file_name, container_name, arg2 = details
-                #add the header to the csv file
+                #
                 if not os.path.isfile("rule-pod-name-mapping.csv"):
                     with open("rule-pod-name-mapping.csv", "w") as f:
                         f.write("file_name,container_name,command\n")
