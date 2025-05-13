@@ -6,6 +6,6 @@ spec:
   containers:
   - name: polkit-privesc
     image: baconspider/cve-2021-4034:latest
-    imagePullPolicy: Never
+    #imagePullPolicy: Never
     command: ["sh"]
     args: ['-c', './pwnkit']
