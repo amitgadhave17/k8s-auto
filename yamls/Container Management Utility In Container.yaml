@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: container-management-utility
+spec:
+  containers:
+  - name: container-management-utility
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    args: ['-c', 'docker ps;kubectl get pods -A']
