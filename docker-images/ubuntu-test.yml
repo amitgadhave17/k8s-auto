@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu-test
+spec:
+  selector:
+    matchLabels:
+      app: ubuntu-test
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: ubuntu-test
+    spec:
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+      containers:
+      - name: ubuntu-test
+        image: ubuntu
+        command: ["sleep"]
+        args: ["infinity"]
+        ports:
+        - containerPort: 80

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memfd-exec
+spec:
+  containers:
+  - name: memfd-exec
+    image: angelrita/memfd-exec:latest
+    #imagePullPolicy: Never
+    #command: ["sleep"]
+    #args: ["infinity"]

@@ -1,0 +1,1 @@
+docker build -t base-ubuntu:latest ./base-ubuntu && docker tag base-ubuntu:latest angelrita/base-ubuntu:latest  && docker push  angelrita/base-ubuntu:latest 

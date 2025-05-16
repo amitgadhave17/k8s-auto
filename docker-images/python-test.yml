@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-test
+spec:
+  selector:
+    matchLabels:
+      app: python-test
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: python-test
+    spec:
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+      containers:
+      - name: python-test
+        image: python:3.11-slim
+        command: ["sleep"]
+        args: ["infinity"]
+        ports:
+        - containerPort: 80
