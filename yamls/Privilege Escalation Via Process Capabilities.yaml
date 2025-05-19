@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: clear-system-logs
+  name: prv-esc-process-cap
 spec:
   containers:
-  - name: clear-system-logs
+  - name: prv-esc-process-cap
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

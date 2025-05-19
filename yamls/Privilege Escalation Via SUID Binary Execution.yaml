@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: clear-system-logs
+  name: prv-esc-suid-binary
 spec:
   containers:
-  - name: clear-system-logs
+  - name: prv-esc-suid-binary
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
-    args: ['-c', 'su test; passwd; sleep infinity']
+    args: ['-c', 'sudo -u test passwd; sleep infinity']
