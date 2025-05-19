@@ -8,4 +8,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
-    args: ['-c', 'sudo -u test passwd; sleep infinity']
+    args: ['-c', 'sudo -u test bash -c "passwd"; sleep infinity']
