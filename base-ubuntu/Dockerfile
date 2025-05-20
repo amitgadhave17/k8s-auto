@@ -71,7 +71,9 @@ RUN gcc -o memfd-exec memfd-exec.c
 RUN chmod +x memfd-exec
 
 RUN useradd test
-RUN apt-get install sudo
+RUN apt-get install sudo -y
+RUN apt-get install libcap2-bin -y
+RUN apt-get install strace -y
 # Optional: default to bash shell on reverse connect (override with CMD)
 CMD ["sleep", "infinity"]
 
