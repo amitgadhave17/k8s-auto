@@ -4,7 +4,7 @@ metadata:
   name: container-escape-cgroup
 spec:
   containers:
-  - name: container-escape-cgroup
+  - name: container-escape-via-cgroup
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
