@@ -4,7 +4,9 @@ metadata:
   name: container-escape-using-runtime-socket
 spec:
   containers:
-  - name: container-escape-runtime-socket
+  - name: container-escape-using-runtime-socket
     image: angelrita/base-ubuntu:latest
     command: ["sh"]
-    args: ["-c", "curl -s --unix-socket /var/run/docker.sock -H \"Content-Type: application/json\" -d \"{'Image':'alpine','Cmd':['sh','-c','echo Hello from Alpine'],'AttachStdout':true,'AttachStderr':true}\" http://localhost/containers/create?name=alpine-from-api"]
+    args: ["-c", "curl -s --unix-socket /var/run/docker.sock -H \"Content-Type: application/json\"\
+        \ -d \"{'Image':'alpine','Cmd':['sh','-c','echo Hello from Alpine'],'AttachStdout':true,'AttachStderr':true}\"\
+        \ http://localhost/containers/create?name=alpine-from-api"]

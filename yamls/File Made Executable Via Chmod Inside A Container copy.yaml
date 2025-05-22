@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: file-made-executable-via-chmod-inside-a-container
+  name: file-made-executable-via-chmod-inside-a-container-copy
 spec:
   containers:
-  - name: clear-system-logs
+  - name: file-made-executable-via-chmod-inside-a-container-copy
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

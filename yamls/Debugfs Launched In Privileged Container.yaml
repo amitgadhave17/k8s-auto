@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debugfs-launch
+  name: debugfs-launched-in-privileged-container
 spec:
   containers:
-  - name: debugfs-launch
+  - name: debugfs-launched-in-privileged-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

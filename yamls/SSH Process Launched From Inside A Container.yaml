@@ -4,7 +4,7 @@ metadata:
   name: ssh-process-launched-from-inside-a-container
 spec:
   containers:
-  - name: clear-system-logs
+  - name: ssh-process-launched-from-inside-a-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

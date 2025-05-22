@@ -4,7 +4,7 @@ metadata:
   name: container-escape-using-docker-socket
 spec:
   containers:
-  - name: container-escape-docker-socket
+  - name: container-escape-using-docker-socket
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

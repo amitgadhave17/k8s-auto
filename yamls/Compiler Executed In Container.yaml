@@ -4,7 +4,7 @@ metadata:
   name: compiler-executed-in-container
 spec:
   containers:
-  - name: compiler-executed
+  - name: compiler-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

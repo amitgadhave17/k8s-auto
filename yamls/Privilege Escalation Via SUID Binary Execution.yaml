@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: prv-esc-suid-binary
+  name: privilege-escalation-via-suid-binary-execution
 spec:
   containers:
-  - name: prv-esc-suid-binary
+  - name: privilege-escalation-via-suid-binary-execution
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

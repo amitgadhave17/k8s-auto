@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: package-installed-in-containe
+  name: package-management-process-in-container
 spec:
   containers:
-  - name: package-installed-in-containe
+  - name: package-management-process-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

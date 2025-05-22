@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: container-escape-cgroup
+  name: container-escape-via-cgroup
 spec:
   containers:
   - name: container-escape-via-cgroup

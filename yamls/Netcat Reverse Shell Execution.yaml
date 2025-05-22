@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nc-reverse-sh
+  name: netcat-reverse-shell-execution
 spec:
   containers:
-  - name: nc-reverse-sh
+  - name: netcat-reverse-shell-execution
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]

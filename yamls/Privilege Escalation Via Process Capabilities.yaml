@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: prv-esc-process-cap
+  name: privilege-escalation-via-process-capabilities
 spec:
   containers:
-  - name: prv-esc-process-cap
+  - name: privilege-escalation-via-process-capabilities
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
-    args: ['-c', 'cp /bin/bash /tmp/testbash; setcap cap_setgid,cap_setuid+ep /tmp/testbash; sudo -u test /tmp/testbash -c whoami; sleep infinity']
+    args: ['-c', 'cp /bin/bash /tmp/testbash; setcap cap_setgid,cap_setuid+ep /tmp/testbash;
+        sudo -u test /tmp/testbash -c whoami; sleep infinity']
