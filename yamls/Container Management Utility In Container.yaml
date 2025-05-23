@@ -7,5 +7,5 @@ spec:
   - name: container-management-utility-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ['-c', 'docker ps;kubectl get pods -A']
+    command: ['sh']
+    args: ['-c', 'docker ps; kubectl get pods -A']

@@ -7,5 +7,5 @@ spec:
   - name: process-hiding
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c']

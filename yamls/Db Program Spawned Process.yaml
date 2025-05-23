@@ -7,5 +7,5 @@ spec:
   - name: db-program-spawned-process
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'cp /bin/bash mysqld; ./mysqld -c whoami']

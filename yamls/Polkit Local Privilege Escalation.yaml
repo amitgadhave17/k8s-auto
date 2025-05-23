@@ -7,5 +7,5 @@ spec:
   - name: polkit-local-privilege-escalation
     image: baconspider/cve-2021-4034:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', './pwnkit']

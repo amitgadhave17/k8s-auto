@@ -7,6 +7,6 @@ spec:
   - name: sudo-potential-privilege-escalation
     image: chenaotian/cve-2021-3156:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'cd ~/exp; sudo -u test bash -c "./exp; whoami > whoami.txt"; sleep
         infinity']

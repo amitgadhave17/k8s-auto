@@ -7,5 +7,5 @@ spec:
   - name: debugfs-launched-in-privileged-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'debugfs']

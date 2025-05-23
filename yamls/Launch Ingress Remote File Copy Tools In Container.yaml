@@ -7,6 +7,5 @@ spec:
   - name: launch-ingress-remote-file-copy-tools-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ["-c", "curl --location --request GET 'https://go.microsoft.com/fwlink/?linkid=2108834&Channel=Stable&language=en'
-        --output foo.exe"]
+    command: ['sh']
+    args: ["-c", "curl --location --request GET 'https://go.microsoft.com/fwlink/?linkid=2108834&Channel=Stable&language=en' --output foo.exe"]

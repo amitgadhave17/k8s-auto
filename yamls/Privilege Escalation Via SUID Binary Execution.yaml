@@ -7,5 +7,5 @@ spec:
   - name: privilege-escalation-via-suid-binary-execution
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ['-c', 'sudo -u test bash -c "passwd"; sleep infinity']
+    command: ['sh']
+    args: ['-c', 'sudo -u test bash -c passwd; sleep infinity']

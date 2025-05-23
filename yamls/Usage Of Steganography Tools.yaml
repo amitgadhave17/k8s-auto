@@ -7,5 +7,5 @@ spec:
   - name: usage-of-steganography-tools
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'steghide embed -cf -ef secret.txt test.jpg']

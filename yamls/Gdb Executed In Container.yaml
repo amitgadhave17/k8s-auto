@@ -7,5 +7,5 @@ spec:
   - name: gdb-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'gdb ./memfd-exec']

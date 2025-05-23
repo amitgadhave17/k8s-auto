@@ -7,5 +7,5 @@ spec:
   - name: insmod-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ['-c', 'modprobe br_netfilter;insmod br_netfilter;sleep infinity']
+    command: ['sh']
+    args: ['-c', 'modprobe br_netfilter; insmod br_netfilter;sleep infinity']

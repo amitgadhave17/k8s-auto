@@ -7,5 +7,5 @@ spec:
   - name: schedule-cron-jobs
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'crontab -e']

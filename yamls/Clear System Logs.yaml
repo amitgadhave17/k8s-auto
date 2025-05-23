@@ -7,9 +7,5 @@ spec:
   - name: clear-system-logs
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
-    args: ['-c', 'rm /var/log/syslog; rm /var/log/messages; rm /var/log/auth.log;
-        rm /var/log/secure; rm /var/log/boot.log; rm /var/log/maillog; rm /var/log/mail.log;
-        rm /var/log/kern.log; rm /var/log/dmesg; rm /var/log/faillog; rm /var/log/cron;
-        rm /var/log/daemon.log; rm /var/log/btmp; rm /var/log/mysqld.log; rm /var/log/mysql.log;
-        rm /var/log/xferlog; sleep infinity']
+    command: ['sh']
+    args: ['-c', 'rm /var/log/syslog; rm /var/log/messages; rm /var/log/auth.log; rm /var/log/secure; rm /var/log/boot.log; rm /var/log/maillog; rm /var/log/mail.log; rm /var/log/kern.log; rm /var/log/dmesg; rm /var/log/faillog; rm /var/log/cron; rm /var/log/daemon.log; rm /var/log/btmp; rm /var/log/mysqld.log; rm /var/log/mysql.log; rm /var/log/xferlog; sleep infinity']

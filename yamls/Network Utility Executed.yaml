@@ -7,5 +7,5 @@ spec:
   - name: network-utility-executed
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'tcpdump']

@@ -9,5 +9,5 @@ spec:
   - name: curl-using-socks-proxy
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'curl -x socks4://proxy.example.com http://www.example.com/']

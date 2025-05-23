@@ -7,5 +7,5 @@ spec:
   - name: container-escape-via-cgroup
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'unshare -UrmC bash; mount -t cgroup -o memory cgroup /mnt']

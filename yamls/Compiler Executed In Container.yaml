@@ -7,5 +7,5 @@ spec:
   - name: compiler-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'gcc -o memfd-exec memfd-exec.c']

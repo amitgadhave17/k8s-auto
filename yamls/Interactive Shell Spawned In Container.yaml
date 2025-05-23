@@ -7,5 +7,5 @@ spec:
   - name: interactive-shell-spawned-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'sh -i']

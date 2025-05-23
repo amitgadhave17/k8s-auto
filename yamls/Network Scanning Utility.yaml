@@ -7,6 +7,6 @@ spec:
   - name: network-scanning-utility
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
-    command: ["sh"]
+    command: ['sh']
     args: ['-c', 'pnscan -t512 -R 6f 73 3a 4c 69 6e 75 78 -W 2a 31 0d 0a 24 34 0d
         0a 69 6e 66 6f 0d 0a 221.0.0.0/16 6379']
