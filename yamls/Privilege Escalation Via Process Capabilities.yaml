@@ -8,5 +8,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'cp /bin/bash /tmp/testbash; setcap cap_setgid,cap_setuid+ep /tmp/testbash;
-        sudo -u test /tmp/testbash -c whoami; sleep infinity']
+    args: ['-c', 'cp /bin/bash /tmp/testbash; setcap cap_setgid,cap_setuid+ep /tmp/testbash; sudo -u test /tmp/testbash -c whoami; sleep infinity']

@@ -8,4 +8,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'modprobe br_netfilter; insmod br_netfilter;sleep infinity']
+    args: ['-c', 'modprobe br_netfilter; insmod br_netfilter']
