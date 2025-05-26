@@ -6,6 +6,5 @@ spec:
   containers:
   - name: ssh-process-launched-from-inside-a-container
     image: angelrita/base-ubuntu:latest
-    #imagePullPolicy: Never
     command: ['sh']
     args: ['-c', 'ssh root@10.113.107.226;']
