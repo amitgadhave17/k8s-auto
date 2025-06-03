@@ -82,7 +82,7 @@ def deploy_and_run(file_path):
             else:
                 print(f"[{pod_name}] No command found in JSON, skipping command execution.")
             print(f"[{pod_name}] Sleeping for 10 seconds...")
-            time.sleep(10)
+            time.sleep(20)
             delete_pod(pod_name)
         else:
             print(f"[{pod_name}] Not ready, skipping delete.")

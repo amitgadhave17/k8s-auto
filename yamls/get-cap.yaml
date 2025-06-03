@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: get-cap
+spec:
+  containers:
+  - name: get-cap
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'getcap -r /']
