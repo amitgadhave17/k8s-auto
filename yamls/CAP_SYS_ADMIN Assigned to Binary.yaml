@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap-sys-admin-assigned-to-binary
+spec:
+  containers:
+  - name: cap-sys-admin-assigned-to-binary
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', "cp /bin/bash /tmp/testbash; setcap cap_sys_admin+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity"]

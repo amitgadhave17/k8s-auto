@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pri-esc-via-gdb-cap-sys-ptrace
+spec:
+  containers:
+  - name: pri-esc-via-gdb-cap-sys-ptrace
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    #args: ['-c', 'cp /bin/bash /tmp/testbash; sudo setcap cap_sys_ptrace+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity']
+    args: ['-c', 'cp /usr/bin/gdb /tmp/testbash; sudo setcap cap_sys_ptrace+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity']

