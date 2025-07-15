@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: local-credentials-modified
+  name: delete-system-logs
 spec:
   containers:
-    - name: local-credentials-modified
+    - name: delete-system-logs
       image: angelrita/base-ubuntu:latest
       command: ['sh']
       args: ['-c', '']

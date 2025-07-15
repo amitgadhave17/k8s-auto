@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: local-credentials-modified
+  name: shell-history-deletion
 spec:
   containers:
-    - name: local-credentials-modified
+    - name: shell-history-deletion
       image: angelrita/base-ubuntu:latest
       command: ['sh']
       args: ['-c', '']

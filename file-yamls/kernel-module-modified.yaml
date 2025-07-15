@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: local-credentials-modified
+  name: kernel-module-modified
 spec:
   containers:
-    - name: local-credentials-modified
+    - name: kernel-module-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
       args: ['-c', '']

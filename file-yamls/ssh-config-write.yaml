@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: local-credentials-modified
+  name: ssh-config-write
 spec:
   containers:
-    - name: local-credentials-modified
+    - name: ssh-config-write
       image: angelrita/base-ubuntu:latest
       command: ['sh']
       args: ['-c', '']
