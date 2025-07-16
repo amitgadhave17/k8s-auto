@@ -13,6 +13,7 @@ spec:
   - "/etc/crontabs/"
   - "/etc/gshadow/"
   - "/etc/ld.so.conf"
+  - "/etc/ld.so.conf.d/"
   - "/etc/ld.so.preload"
   - "/etc/nsswitch.conf"
   - "/etc/pam.conf"
