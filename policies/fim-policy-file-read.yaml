@@ -1,0 +1,10 @@
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+ name: monitor-file-read
+spec:
+ base-policy: "file-read"
+ action: "audit"
+ monitor-paths:
+  - "/etc/passwd"
+  - "/etc/shadow"

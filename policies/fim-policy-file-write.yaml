@@ -1,0 +1,9 @@
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+ name: monitor-file-write
+spec:
+ base-policy: "file-write"
+ action: "audit"
+ monitor-paths:
+  - "/var/log"

@@ -1,0 +1,9 @@
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+ name: monitor-file-write-diff
+spec:
+ base-policy: "file-write-diff"
+ action: "audit"
+ monitor-paths:
+  - "/etc/important-config"

@@ -1,0 +1,9 @@
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+ name: monitor-file-rename
+spec:
+ base-policy: "file-rename"
+ action: "audit"
+ monitor-paths:
+  - "/var/log"
