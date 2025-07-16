@@ -14,6 +14,7 @@ spec:
   - "/etc/gshadow/"
   - "/etc/ld.so.conf"
   - "/etc/ld.so.preload"
+  - "/etc/ld.so.conf.d/"
 #  - "/etc/nsswitch.conf"
   - "/etc/pam.conf"
   - "/etc/pam.d/"
