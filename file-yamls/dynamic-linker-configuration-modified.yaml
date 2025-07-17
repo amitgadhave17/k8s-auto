@@ -7,4 +7,4 @@ spec:
     - name: dynamic-linker-configuration-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "#include /etc/ld.so.conf.d/*.conf" >>  /etc/ld.so.conf.d/test.conf; sleep infinity']
+      args: ['-c', 'echo "#include /etc/ld.so.conf.d/*.conf" >  /etc/ld.so.conf.d/test.conf;rm /etc/ld.so.conf.d/test.conf; sleep infinity']

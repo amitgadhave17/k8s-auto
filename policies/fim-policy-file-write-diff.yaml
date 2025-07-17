@@ -7,3 +7,4 @@ spec:
  action: "audit"
  monitor-paths:
   - "/etc/important-config"
+  - "/etc/ld.so.conf.d/"
