@@ -29,7 +29,7 @@ spec:
   - "/lib/modules/"
   - "/lib/systemd/system/"
   - "/lib/udev/rules.d/"
-  - "/proc/self/fd/1"
+  - "/proc/self/fd/"
   - "/root/.config/"
   - "/root/.kube/config"
   - "/root/.prng/"
