@@ -7,4 +7,4 @@ spec:
     - name: open-msr-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "on" | sudo tee /sys/module/msr/parameters/allow_writes; sleep infinity']
+      args: ['-c', 'echo "on" | sudo tee /sys/module/msr/parameters/allow_writes']
