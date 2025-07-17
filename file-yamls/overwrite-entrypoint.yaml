@@ -7,4 +7,4 @@ spec:
     - name: overwrite-entrypoint
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'echo "Hello, world!" > /proc/self/fd/1; sleep infinity']
