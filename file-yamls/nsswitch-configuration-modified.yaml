@@ -7,4 +7,4 @@ spec:
     - name: nsswitch-configuration-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "#nssswitch file appended" >> /etc/nsswitch.conf']
+      args: ['-c', 'echo "#nssswitch file appended" >> nssswi.conf; cp nssswi.conf /etc/nsswitch.conf; sleep infinity']
