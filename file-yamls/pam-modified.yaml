@@ -7,4 +7,4 @@ spec:
     - name: pam-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'cp memfd-exec /etc/pam.d/']
