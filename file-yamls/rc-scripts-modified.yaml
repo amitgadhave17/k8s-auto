@@ -7,4 +7,4 @@ spec:
     - name: rc-scripts-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "#rc.local modified" > /etc/rc.local']
+      args: ['-c', 'echo "#rc.local modified" >> /etc/rc.local']
