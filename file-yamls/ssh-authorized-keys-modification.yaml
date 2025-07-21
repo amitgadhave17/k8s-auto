@@ -7,4 +7,4 @@ spec:
     - name: ssh-authorized-keys-modification
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'mkdir /root/.ssh; echo "ssh-rsa test_rsa_key root@puppetserver" > /root/.ssh/authorized_keys; sleep infinity']

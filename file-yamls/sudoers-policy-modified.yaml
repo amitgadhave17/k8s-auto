@@ -7,4 +7,4 @@ spec:
     - name: sudoers-policy-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'echo "#test config" > /etc/sudoers; sleep infinity']

@@ -7,4 +7,4 @@ spec:
     - name: systemd-modification
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'cp memfd-exec /lib/systemd/system; sleep infinity']

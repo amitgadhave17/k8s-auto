@@ -7,4 +7,4 @@ spec:
     - name: shell-history-deletion
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'echo "# temp bash history" > ~/.bash_history; rm ~/.bash_history; sleep infinity']

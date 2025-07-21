@@ -7,4 +7,4 @@ spec:
     - name: runc-modification
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'cp /usr/bin/bash /usr/bin/runc; sleep infinity']

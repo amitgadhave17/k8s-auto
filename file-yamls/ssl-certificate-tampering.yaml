@@ -7,4 +7,4 @@ spec:
     - name: ssl-certificate-tampering
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'mkdir /etc/ssl/certs -p; echo "#test config" > /etc/ssl/certs/test.cert; sleep infinity']
