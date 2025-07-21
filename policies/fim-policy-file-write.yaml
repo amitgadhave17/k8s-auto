@@ -6,6 +6,7 @@ spec:
  base-policy: "file-write"
  action: "audit"
  monitor-paths:
+  - "/tmp/"
   - "/home/"
   - "/dev/shm/"
   - "/etc/cron"
