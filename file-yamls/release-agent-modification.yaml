@@ -7,4 +7,4 @@ spec:
     - name: release-agent-modification
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'mkdir /tmp/testcgroup; echo "Release agent modification test" > /tmp/testcgroup/release-agent; mkdir/tmp/testcgroup/x; echo "1" > /tmp/testcgroup/x/notify_on_release; sleep infinity']
