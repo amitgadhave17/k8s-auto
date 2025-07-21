@@ -7,4 +7,4 @@ spec:
     - name: delete-system-logs
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "logs" >> /var/log/wtmp; rm /var/log/wtmp']
+      args: ['-c', 'echo "logs" >> /var/log/wtmp; rm /var/log/wtmp; sleep infinity']

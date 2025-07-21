@@ -7,4 +7,4 @@ spec:
     - name: kernel-module-modified
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'mkdir /lib/modules/; cp memfd-exec /lib/modules/']
+      args: ['-c', 'mkdir /lib/modules/; cp memfd-exec /lib/modules/; sleep infinity']

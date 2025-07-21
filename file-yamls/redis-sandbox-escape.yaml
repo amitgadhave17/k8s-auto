@@ -7,4 +7,4 @@ spec:
     - name: redis-sandbox-escape
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'cp bash redis-server; redis-server -c "cat /usr/lib/x86_64-linux-gnu/libc-2.31.so"']
+      args: ['-c', 'cp /usr/bin/bash redis-server; ./redis-server -c "cat /usr/lib/x86_64-linux-gnu/libc-2.31.so"; sleep infinity']
