@@ -9,3 +9,5 @@ spec:
     #imagePullPolicy: Never
     command: ['sh']
     args: ['-c', 'sleep infinity']
+    securityContext:
+      privileged: true
