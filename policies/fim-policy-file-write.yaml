@@ -9,6 +9,7 @@ spec:
   - "/tmp/"
   - "/home/"
   - "/dev/shm/"
+  - "/dev/pts/"
   - "/etc/cron"
   - "/etc/crontab"
   - "/etc/crontabs/"
