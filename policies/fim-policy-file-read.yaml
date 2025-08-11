@@ -8,3 +8,4 @@ spec:
  monitor-paths:
   - "/etc/passwd"
   - "/etc/shadow"
+  - "/proc/"
