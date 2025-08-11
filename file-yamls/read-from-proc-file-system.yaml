@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: read-from-proc-file-system
+spec:
+  containers:
+    - name: read-from-proc-file-system
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'cat /proc/meminfo; sleep infinity']

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: persistence-script-write
+spec:
+  containers:
+    - name: persistence-script-write
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'echo "#rc.local modified" >> /etc/profile; sleep infinity']
