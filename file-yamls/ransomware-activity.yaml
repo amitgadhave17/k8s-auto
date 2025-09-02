@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ransomware-activity
+spec:
+  containers:
+    - name: ransomware-activity
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'echo "ransomware encryption" >> /home/file.thanos; sleep infinity']
