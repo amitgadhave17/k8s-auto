@@ -8,4 +8,8 @@ spec:
  monitor-paths:
   - "/etc/passwd"
   - "/etc/shadow"
-  - "/proc/"
+  - "/.git"
+  - "/app/.git"
+  - "/usr/src/app/.git"
+  - "/root/.git"
+#  - "/proc"
