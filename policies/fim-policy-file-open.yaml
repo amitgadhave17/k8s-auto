@@ -83,6 +83,9 @@ spec:
   - /.git/
   - /.ssh/
   - /.git-credentials
+  - /root/.git-credentials
+  - /root/.ssh/
+  - /root/.git/
   - /etc/ansible/
   - /app/.terraform/terraform.tfstate
   - .terraform/terraform.tfstate

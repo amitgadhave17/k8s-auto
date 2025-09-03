@@ -7,4 +7,4 @@ spec:
     - name: apache-httpd-private-configs-access
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'mkdir -p /etc/apache2/; echo "writing to htapassword" >> /etc/apache2/.htpasswd; cat /etc/apache2/.htpasswd; sleep infinity']

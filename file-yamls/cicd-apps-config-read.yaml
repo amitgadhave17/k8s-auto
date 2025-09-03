@@ -7,4 +7,4 @@ spec:
     - name: cicd-apps-config-read
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', '']
+      args: ['-c', 'mkdir -p /var/lib/jenkins/; echo "writing to test" >> /var/lib/jenkins/credentials.xml; cat /var/lib/jenkins/credentials.xml; sleep infinity']
