@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: container-runtime-sockets-access
+spec:
+  containers:
+    - name: container-runtime-sockets-access
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', '']

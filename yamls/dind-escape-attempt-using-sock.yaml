@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dind-escape-attempt-using-sock
+spec:
+  containers:
+    - name: dind-escape-attempt-using-sock
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', '']

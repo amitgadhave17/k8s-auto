@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache-httpd-private-configs-access
+spec:
+  containers:
+    - name: apache-httpd-private-configs-access
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', '']

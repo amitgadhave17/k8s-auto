@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: usage-of-steganography-tools
+  name: Container Resource Abuse
 spec:
   containers:
   - name: usage-of-steganography-tools

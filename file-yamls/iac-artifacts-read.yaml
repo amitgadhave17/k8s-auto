@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iac-artifacts-read
+spec:
+  containers:
+    - name: iac-artifacts-read
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', '']
