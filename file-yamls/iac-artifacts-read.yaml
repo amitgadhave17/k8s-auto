@@ -7,4 +7,4 @@ spec:
     - name: iac-artifacts-read
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'echo "test" >> /etc/ansible/inventory.ini; cat /etc/ansible/inventory.ini; sleep infinity']
+      args: ['-c', 'mkdir -p /etc/ansible/; echo "test" >> /etc/ansible/inventory.ini; cat /etc/ansible/inventory.ini; sleep infinity']

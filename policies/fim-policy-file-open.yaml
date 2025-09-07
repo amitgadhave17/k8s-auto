@@ -66,7 +66,7 @@ spec:
   - /usr/local/etc/
   - /var/www/html/
   - /etc/secrets/
-  - /run/secrets/
+#  - /run/secrets/
   - /secrets/
   - /.env
   - /app/
@@ -88,7 +88,7 @@ spec:
   - /root/.git/
   - /etc/ansible/
   - /app/.terraform/terraform.tfstate
-  - .terraform/terraform.tfstate
+  - /.terraform/terraform.tfstate
   - /.aws/
   - /.azure/
   - /.config/
