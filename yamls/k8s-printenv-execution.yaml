@@ -7,4 +7,4 @@ spec:
     - name: k8s-printenv-execution
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'printenv']
+      args: ['-c', 'printenv; sleep infinity']

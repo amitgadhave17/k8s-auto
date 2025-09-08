@@ -80,6 +80,7 @@ spec:
   - /.pypirc
   - /.netrc
   - /var/run/secrets/
+  - /var/run/secrets/kubernetes.io/serviceaccount/
   - /.git/
   - /.ssh/
   - /.git-credentials

@@ -7,4 +7,4 @@ spec:
     - name: dind-escape-attempt-using-sock
       image: angelrita/base-ubuntu:latest
       command: ['sh']
-      args: ['-c', 'crictl -r unix:///custom/containerd/containerd.sock images']
+      args: ['-c', 'crictl -r unix:///custom/containerd/containerd.sock images; sleep infinity']

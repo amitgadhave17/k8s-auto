@@ -64,6 +64,7 @@ RUN apt-get install -y vim
 
 #install ssh
 RUN apt-get install -y ssh openssh-client
+RUN apt-get install -y stress cri-tools
 
 #build program
 COPY memfd-exec.c .

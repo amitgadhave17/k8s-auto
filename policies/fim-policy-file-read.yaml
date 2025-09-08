@@ -46,4 +46,5 @@ spec:
   - /etc/ssl/private
   - /etc/letsencrypt/live/
 #  - "/proc"
-#  - /var/run/secrets/
+  - /var/run/secrets/
+  - /var/run/secrets/kubernetes.io/serviceaccount/
