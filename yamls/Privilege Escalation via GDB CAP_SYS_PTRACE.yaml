@@ -9,4 +9,4 @@ spec:
     #imagePullPolicy: Never
     command: ["sh"]
     #args: ['-c', 'cp /bin/bash /tmp/testbash; sudo setcap cap_sys_ptrace+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity']
-    args: ['-c', 'cp /usr/bin/gdb /tmp/testbash; sudo setcap cap_sys_ptrace+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity']
+    args: ['-c', 'cp /usr/bin/gdb /tmp/testbash; setcap cap_sys_ptrace+ep /tmp/testbash; /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity']
