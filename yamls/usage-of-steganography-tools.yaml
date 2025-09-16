@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: get-cap
+  name: Container Resource Abuse
 spec:
   containers:
-  - name: get-cap
+  - name: usage-of-steganography-tools
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'sudo -u test getcap -r /']
+    args: ['-c', 'steghide embed -cf -ef secret.txt test.jpg']
+c

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: file-made-executable-via-chmod-inside-a-container-copy
+  name: file-made-executable-via-chmod-inside-a-container
 spec:
   containers:
-  - name: file-made-executable-via-chmod-inside-a-container-copy
+  - name: file-made-executable-via-chmod-inside-a-container
     image: angelrita/base-ubuntu:latest
     command: ['sh']
     args: ['-c', 'chmod 4755 memfd-exec; chmod +x memfd-exec']
