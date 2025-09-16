@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: process-hidden-using-mount-hidepid
+spec:
+  containers:
+  - name: process-hidden-using-mount-hidepid
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'mount -o remount,hidepid=2 /proc']

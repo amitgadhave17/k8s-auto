@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: schedule-cron-jobs
+spec:
+  containers:
+  - name: schedule-cron-jobs
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'crontab -e']
