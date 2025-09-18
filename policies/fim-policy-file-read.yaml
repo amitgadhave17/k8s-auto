@@ -44,7 +44,7 @@ spec:
   - "/.azure/"
   - "/.config/"
   - "/etc/ssl/private"
-  - "/etc/letsencrypt/live/
+  - "/etc/letsencrypt/live/"
   - "/var/run/secrets/"
   - "/var/run/secrets/kubernetes.io/serviceaccount/"
 #read shell configuration files
