@@ -57,7 +57,7 @@ spec:
 #  - "/var/log/secure"
 #  - "/var/log/syslog"
 #  - "/var/log/wtmp"
-  - "/var/run/secrets/eks.amazonaws.com/serviceaccount/"
+#  - "/var/run/secrets/eks.amazonaws.com/serviceaccount/"
 #  - "/var/run/utmp"
 #  - "/var/spool/cron/"
   - /etc/apache2/
@@ -79,8 +79,8 @@ spec:
   - /.npmrc
   - /.pypirc
   - /.netrc
-  - /var/run/secrets/
-  - /var/run/secrets/kubernetes.io/serviceaccount/
+#  - /var/run/secrets/
+#  - /var/run/secrets/kubernetes.io/serviceaccount/
   - /.git/
   - /.ssh/
   - /.git-credentials

@@ -8,4 +8,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'sh -i']
+    args: ['-c', 'sh -i; sleep infinity']
