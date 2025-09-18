@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: modify-binary-dirs
+spec:
+  containers:
+    - name: modify-binary-dirs
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'cp /bin/bash /bin/testbash; sleep infinity']

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: create-symlink-or-hardlink-over-sensitive-files
+spec:
+  containers:
+    - name: create-symlink-or-hardlink-over-sensitive-files
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'ln /etc/passwd /tmp/passwdlink; ln -s /etc/passwd /tmp/passwdsymlink; sleep infinity']

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: read-shell-configuration-file
+spec:
+  containers:
+    - name: read-shell-configuration-file
+      image: angelrita/base-ubuntu:latest
+      command: ['sh']
+      args: ['-c', 'echo "#rc.local modified" >> /etc/profile; cat /etc/profile; sleep infinity']
