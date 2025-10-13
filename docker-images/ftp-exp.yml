@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ftp-exp
+spec:
+  containers:
+  - name: ftp-exp
+    image: laoa1573/vsftpd2.3.4:v01
+    ports:
+    - containerPort: 21
+      hostPort: 21
+      protocol: TCP
+    - containerPort: 6200
+      hostPort: 6200
+      protocol: TCP
