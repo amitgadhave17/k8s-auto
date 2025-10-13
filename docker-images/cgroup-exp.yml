@@ -9,4 +9,4 @@ spec:
     securityContext:
       privileged: true
     command: ["/bin/sh"]
-    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh \"echo 'cgroup export worked' > /home/test/exploit_readme.txt\"; sleep infinity"]
+    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'echo \"cgroup export worked $HOME\" > $HOME/exploit_readme.txt'; sleep infinity"]
