@@ -9,4 +9,3 @@ spec:
     #imagePullPolicy: Never
     command: ['sh']
     args: ['-c', 'steghide embed -cf -ef secret.txt test.jpg']
-c
