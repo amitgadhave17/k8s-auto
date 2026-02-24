@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: k8s-printenv-execution
 spec:
+  restartPolicy: Never
   containers:
     - name: k8s-printenv-execution
       image: angelrita/base-ubuntu:latest

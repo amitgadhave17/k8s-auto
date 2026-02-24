@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: runc-modification
 spec:
+  restartPolicy: Never
   containers:
     - name: runc-modification
       image: angelrita/base-ubuntu:latest

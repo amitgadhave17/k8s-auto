@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: udev-modification
 spec:
+  restartPolicy: Never
   containers:
     - name: udev-modification
       image: angelrita/base-ubuntu:latest

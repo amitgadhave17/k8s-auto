@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: open-msr-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: open-msr-modified
       image: angelrita/base-ubuntu:latest

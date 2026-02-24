@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: network-traffic-capture-via-cap-net-raw
 spec:
+  restartPolicy: Never
   containers:
   - name: network-traffic-capture-via-cap-net-raw
     image: angelrita/base-ubuntu:latest

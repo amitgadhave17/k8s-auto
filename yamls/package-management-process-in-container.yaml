@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: package-management-process-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: package-management-process-in-container
     image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: polkit-local-privilege-escalation
 spec:
+  restartPolicy: Never
   containers:
   - name: polkit-local-privilege-escalation
     image: baconspider/cve-2021-4034:latest

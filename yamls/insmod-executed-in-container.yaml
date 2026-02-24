@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: insmod-executed-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: insmod-executed-in-container
     image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: network-utility-executed
 spec:
+  restartPolicy: Never
   containers:
   - name: network-utility-executed
     image: angelrita/base-ubuntu:latest

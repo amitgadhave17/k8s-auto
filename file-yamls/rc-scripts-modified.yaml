@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: rc-scripts-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: rc-scripts-modified
       image: angelrita/base-ubuntu:latest

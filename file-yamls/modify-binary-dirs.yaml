@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: modify-binary-dirs
 spec:
+  restartPolicy: Never
   containers:
     - name: modify-binary-dirs
       image: angelrita/base-ubuntu:latest

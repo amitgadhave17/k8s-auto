@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: usage-of-steganography-tools
 spec:
+  restartPolicy: Never
   containers:
   - name: usage-of-steganography-tools
     image: angelrita/base-ubuntu:latest

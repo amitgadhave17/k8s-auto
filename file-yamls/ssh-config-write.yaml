@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: ssh-config-write
 spec:
+  restartPolicy: Never
   containers:
     - name: ssh-config-write
       image: angelrita/base-ubuntu:latest

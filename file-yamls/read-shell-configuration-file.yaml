@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: read-shell-configuration-file
 spec:
+  restartPolicy: Never
   containers:
     - name: read-shell-configuration-file
       image: angelrita/base-ubuntu:latest

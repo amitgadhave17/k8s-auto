@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: compiler-executed-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: compiler-executed-in-container
     image: angelrita/base-ubuntu:latest

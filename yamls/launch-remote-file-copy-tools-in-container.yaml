@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: launch-remote-file-copy-tools-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: launch-remote-file-copy-tools-in-container
     image: angelrita/base-ubuntu:latest

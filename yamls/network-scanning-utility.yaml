@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: network-scanning-utility
 spec:
+  restartPolicy: Never
   containers:
   - name: network-scanning-utility
     image: angelrita/base-ubuntu:latest

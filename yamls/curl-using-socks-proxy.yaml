@@ -5,6 +5,7 @@ kind: Pod
 metadata:
   name: curl-using-socks-proxy
 spec:
+  restartPolicy: Never
   containers:
   - name: curl-using-socks-proxy
     image: angelrita/base-ubuntu:latest

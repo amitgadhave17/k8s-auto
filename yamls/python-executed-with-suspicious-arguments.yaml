@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: python-executed-with-suspicious-arguments
 spec:
+  restartPolicy: Never
   containers:
   - name: python-executed-with-suspicious-arguments
     image: angelrita/base-ubuntu:latest

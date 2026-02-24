@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: debugfs-launched-in-privileged-container
 spec:
+  restartPolicy: Never
   containers:
   - name: debugfs-launched-in-privileged-container
     image: angelrita/base-ubuntu:latest

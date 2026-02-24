@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: process-capability-enumeration
 spec:
+  restartPolicy: Never
   containers:
   - name: Process Capability Enumeration
     image: angelrita/base-ubuntu:latest

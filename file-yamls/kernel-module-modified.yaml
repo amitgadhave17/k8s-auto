@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: kernel-module-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: kernel-module-modified
       image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: read-from-proc-file-system
 spec:
+  restartPolicy: Never
   containers:
     - name: read-from-proc-file-system
       image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: iac-artifacts-read
 spec:
+  restartPolicy: Never
   containers:
     - name: iac-artifacts-read
       image: angelrita/base-ubuntu:latest

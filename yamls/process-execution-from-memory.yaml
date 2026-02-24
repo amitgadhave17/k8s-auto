@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: process-execution-from-memory
 spec:
+  restartPolicy: Never
   containers:
   - name: process-execution-from-memory
     image: angelrita/memfd-exec:latest

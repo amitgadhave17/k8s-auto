@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: interactive-shell-spawned-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: interactive-shell-spawned-in-container
     image: angelrita/base-ubuntu:latest

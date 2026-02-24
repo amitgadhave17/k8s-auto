@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: nsswitch-configuration-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: nsswitch-configuration-modified
       image: angelrita/base-ubuntu:latest

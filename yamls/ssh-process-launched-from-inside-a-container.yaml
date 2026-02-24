@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: ssh-process-launched-from-inside-a-container
 spec:
+  restartPolicy: Never
   containers:
   - name: ssh-process-launched-from-inside-a-container
     image: angelrita/base-ubuntu:latest

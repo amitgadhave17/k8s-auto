@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: sudo-potential-privilege-escalation
 spec:
+  restartPolicy: Never
   containers:
   - name: sudo-potential-privilege-escalation
     image: chenaotian/cve-2021-3156:latest

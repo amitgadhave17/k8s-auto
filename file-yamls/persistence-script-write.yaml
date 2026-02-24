@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: persistence-script-write
 spec:
+  restartPolicy: Never
   containers:
     - name: persistence-script-write
       image: angelrita/base-ubuntu:latest

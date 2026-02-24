@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: privilege-escalation-via-suid-binary-execution
 spec:
+  restartPolicy: Never
   containers:
   - name: privilege-escalation-via-suid-binary-execution
     image: angelrita/base-ubuntu:latest

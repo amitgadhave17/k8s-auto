@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: cap-sys-admin-assigned-to-binary
 spec:
+  restartPolicy: Never
   containers:
   - name: cap-sys-admin-assigned-to-binary
     image: angelrita/base-ubuntu:latest

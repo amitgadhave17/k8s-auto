@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: container-resource-abuse
 spec:
+  restartPolicy: Never
   containers:
     - name: container-resource-abuse
       image: angelrita/base-ubuntu:latest

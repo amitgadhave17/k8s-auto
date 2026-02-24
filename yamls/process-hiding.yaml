@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: process-hiding
 spec:
+  restartPolicy: Never
   containers:
   - name: process-hiding
     image: angelrita/base-ubuntu:latest

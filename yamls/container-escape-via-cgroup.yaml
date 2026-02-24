@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: container-escape-via-cgroup
 spec:
+  restartPolicy: Never
   containers:
   - name: container-escape-via-cgroup
     image: angelrita/base-ubuntu:latest

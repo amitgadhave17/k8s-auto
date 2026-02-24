@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: reconnaissance-attempt-to-find-suid-binaries
 spec:
+  restartPolicy: Never
   containers:
     - name: reconnaissance-attempt-to-find-suid-binaries
       image: angelrita/base-ubuntu:latest

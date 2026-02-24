@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: redis-sandbox-escape
 spec:
+  restartPolicy: Never
   containers:
     - name: redis-sandbox-escape
       image: angelrita/base-ubuntu:latest

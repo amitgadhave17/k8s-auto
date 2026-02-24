@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: db-program-spawned-process
 spec:
+  restartPolicy: Never
   containers:
   - name: db-program-spawned-process
     image: angelrita/base-ubuntu:latest

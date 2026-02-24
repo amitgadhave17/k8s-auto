@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: cicd-apps-config-read
 spec:
+  restartPolicy: Never
   containers:
     - name: cicd-apps-config-read
       image: angelrita/base-ubuntu:latest

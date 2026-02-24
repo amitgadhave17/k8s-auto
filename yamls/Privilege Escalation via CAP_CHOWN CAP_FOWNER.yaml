@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: pri-esc-via-cap-chown-cap-fowner
 spec:
+  restartPolicy: Never
   containers:
   - name: pri-esc-via-cap-chown-cap-fowner
     image: angelrita/base-ubuntu:latest

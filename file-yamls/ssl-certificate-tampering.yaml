@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: ssl-certificate-tampering
 spec:
+  restartPolicy: Never
   containers:
     - name: ssl-certificate-tampering
       image: angelrita/base-ubuntu:latest

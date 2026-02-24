@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: container-escape-using-runtime-socket
 spec:
+  restartPolicy: Never
   containers:
   - name: container-escape-runtime-socket
     image: angelrita/base-ubuntu:latest

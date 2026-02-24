@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: pam-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: pam-modified
       image: angelrita/base-ubuntu:latest

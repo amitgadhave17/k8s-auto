@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: gdb-executed-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: gdb-executed-in-container
     image: angelrita/base-ubuntu:latest

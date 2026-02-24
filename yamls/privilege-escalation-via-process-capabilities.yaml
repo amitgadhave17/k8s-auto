@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: privilege-escalation-via-process-capabilities
 spec:
+  restartPolicy: Never
   containers:
   - name: privilege-escalation-via-process-capabilities
     image: angelrita/base-ubuntu:latest

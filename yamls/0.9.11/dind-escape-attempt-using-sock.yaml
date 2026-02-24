@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: dind-escape-attempt-using-sock
 spec:
+  restartPolicy: Never
   containers:
     - name: dind-escape-attempt-using-sock
       image: angelrita/base-ubuntu:latest

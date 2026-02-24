@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: dynamic-linker-configuration-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: dynamic-linker-configuration-modified
       image: angelrita/base-ubuntu:latest

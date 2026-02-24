@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: netcat-reverse-shell-execution
 spec:
+  restartPolicy: Never
   containers:
   - name: netcat-reverse-shell-execution
     image: angelrita/base-ubuntu:latest

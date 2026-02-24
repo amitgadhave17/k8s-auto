@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: launch-ingress-remote-file-copy-tools-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: launch-ingress-remote-file-copy-tools-in-container
     image: angelrita/base-ubuntu:latest

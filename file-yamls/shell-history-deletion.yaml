@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: shell-history-deletion
 spec:
+  restartPolicy: Never
   containers:
     - name: shell-history-deletion
       image: angelrita/base-ubuntu:latest

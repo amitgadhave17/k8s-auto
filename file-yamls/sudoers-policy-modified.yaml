@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: sudoers-policy-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: sudoers-policy-modified
       image: angelrita/base-ubuntu:latest

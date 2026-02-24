@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: pri-esc-via-gdb-cap-sys-ptrace
 spec:
+  restartPolicy: Never
   containers:
   - name: pri-esc-via-gdb-cap-sys-ptrace
     image: angelrita/base-ubuntu:latest

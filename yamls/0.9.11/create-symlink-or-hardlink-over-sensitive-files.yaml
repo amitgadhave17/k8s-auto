@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: create-symlink-or-hardlink-over-sensitive-files
 spec:
+  restartPolicy: Never
   containers:
     - name: create-symlink-or-hardlink-over-sensitive-files
       image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: file-made-executable-via-chmod-inside-a-container
 spec:
+  restartPolicy: Never
   containers:
   - name: file-made-executable-via-chmod-inside-a-container
     image: angelrita/base-ubuntu:latest

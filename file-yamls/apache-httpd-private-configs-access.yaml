@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: apache-httpd-private-configs-access
 spec:
+  restartPolicy: Never
   containers:
     - name: apache-httpd-private-configs-access
       image: angelrita/base-ubuntu:latest

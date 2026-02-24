@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: ssh-authorized-keys-modification
 spec:
+  restartPolicy: Never
   containers:
     - name: ssh-authorized-keys-modification
       image: angelrita/base-ubuntu:latest

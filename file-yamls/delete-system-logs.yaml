@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: delete-system-logs
 spec:
+  restartPolicy: Never
   containers:
     - name: delete-system-logs
       image: angelrita/base-ubuntu:latest

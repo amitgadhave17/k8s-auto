@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: potential-privilege-escalation-via-linux-dac-permissions
 spec:
+  restartPolicy: Never
   containers:
   - name: potential-privilege-escalation-via-linux-dac-permissions
     image: angelrita/base-ubuntu:latest

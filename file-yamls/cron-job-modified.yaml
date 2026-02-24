@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: cron-job-modified
 spec:
+  restartPolicy: Never
   containers:
     - name: cron-job-modified
       image: angelrita/base-ubuntu:latest

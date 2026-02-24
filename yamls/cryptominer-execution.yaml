@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: cryptominer-execution
 spec:
+  restartPolicy: Never
   containers:
   - name: cryptominer-execution
     image: miningcontainers/xmrig:latest

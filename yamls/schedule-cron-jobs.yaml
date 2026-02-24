@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: schedule-cron-jobs
 spec:
+  restartPolicy: Never
   containers:
   - name: schedule-cron-jobs
     image: angelrita/base-ubuntu:latest

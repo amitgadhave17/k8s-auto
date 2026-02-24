@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: container-management-utility-in-container
 spec:
+  restartPolicy: Never
   containers:
   - name: container-management-utility-in-container
     image: angelrita/base-ubuntu:latest

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: overwrite-entrypoint
 spec:
+  restartPolicy: Never
   containers:
     - name: overwrite-entrypoint
       image: angelrita/base-ubuntu:latest

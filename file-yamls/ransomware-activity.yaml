@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: ransomware-activity
 spec:
+  restartPolicy: Never
   containers:
     - name: ransomware-activity
       image: angelrita/base-ubuntu:latest

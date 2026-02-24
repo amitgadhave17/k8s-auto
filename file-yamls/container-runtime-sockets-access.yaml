@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: container-runtime-sockets-access
 spec:
+  restartPolicy: Never
   containers:
     - name: container-runtime-sockets-access
       image: angelrita/base-ubuntu:latest

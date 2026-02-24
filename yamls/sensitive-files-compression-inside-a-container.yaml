@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: sensitive-files-compression-inside-a-container
 spec:
+  restartPolicy: Never
   containers:
   - name: sensitive-files-compression-inside-a-container
     image: angelrita/base-ubuntu:latest
