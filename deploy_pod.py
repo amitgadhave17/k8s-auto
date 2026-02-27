@@ -134,6 +134,32 @@ def run_command_in_pod(pod_name, namespace="default", command=None):
     )
     print(f"[{pod_name}] Command output:\n{resp}")
 
+def kill_all_pods(namespace="default"):
+    print(f"[kill] Deleting all pods in namespace: {namespace}")
+    try:
+        pods = core_v1_api.list_namespaced_pod(namespace=namespace)
+    except Exception as e:
+        print(f"[kill] Failed listing pods in namespace {namespace}: {e}")
+        return
+
+    items = getattr(pods, "items", None) or []
+    if not items:
+        print(f"[kill] No pods found in namespace: {namespace}")
+        return
+
+    for pod in items:
+        name = getattr(getattr(pod, "metadata", None), "name", None)
+        if not name:
+            continue
+        try:
+            print(f"[kill] Deleting pod: {name}")
+            core_v1_api.delete_namespaced_pod(name=name, namespace=namespace, grace_period_seconds=0)
+        except client.exceptions.ApiException as e:
+            if getattr(e, "status", None) != 404:
+                print(f"[kill] Failed deleting pod {name}: {e}")
+        except Exception as e:
+            print(f"[kill] Failed deleting pod {name}: {e}")
+
 def delete_pod(pod_name, namespace="default"):
     print(f"[{pod_name}] Deleting pod...")
     core_v1_api.delete_namespaced_pod(name=pod_name, namespace=namespace)
@@ -167,12 +193,21 @@ def deploy_and_run(file_path):
 def main():
     parser = argparse.ArgumentParser(description="Deploy YAML(s) to Kubernetes and run commands.")
     parser.add_argument(
+        "--kill",
+        action="store_true",
+        help="Delete all pods in the default namespace and exit"
+    )
+    parser.add_argument(
         "path",
         nargs="?",  # optional
         default="./yamls",
         help="Path to YAML file or folder (default: ./yamls)"
     )
     args = parser.parse_args()
+
+    if args.kill:
+        kill_all_pods(namespace="default")
+        return
 
     yaml_files = []
 
