@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: cgroup-exp
+  name: cgroup-exp-nc
 spec:
   containers:
-  - name: cgroup-exp
+  - name: cgroup-exp-nc
     image: yaoyinnan/cve-2022-0492:latest
     securityContext:
       privileged: true
