@@ -5,7 +5,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-  - name: Process Capability Enumeration
+  - name: process-capability-enumeration
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
