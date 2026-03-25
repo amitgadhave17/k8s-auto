@@ -1,0 +1,926 @@
+================================================================================
+FOLDER: 0.9.10
+================================================================================
+
+Total Processes: 19
+Total Rules: 14
+
+Regex Pattern:
+(cat|crontab|curl|docker|kubectl|masscan|modprobe|mount|nc|ncat|nmap|pnscan|python[23]|rm|service|sysctl|unshare|wpscan|zgrab)
+
+--------------------------------------------------------------------------------
+ALPHABETICAL LIST
+--------------------------------------------------------------------------------
+cat
+crontab
+curl
+docker
+kubectl
+masscan
+modprobe
+mount
+nc
+ncat
+nmap
+pnscan
+python[23]
+rm
+service
+sysctl
+unshare
+wpscan
+zgrab
+
+--------------------------------------------------------------------------------
+RULE -> MONITORED PROCESS MAPPINGS
+--------------------------------------------------------------------------------
+
+Clear_System_Logs_T1070_002:
+  process_name: rm
+
+Container_Escape_Using_Docker_Socket_T1611:
+  process_name: docker
+
+Container_Escape_Using_Runtime_Socket_T1611:
+  process_name: curl
+
+Container_Escape_Via_Cgroup_T1611:
+  process_name: unshare | mount
+
+Credential_Access_Bash_History_T1552_003:
+  process_name: cat | rm
+
+Cryptominer_Execution_T1496:
+  process_name: modprobe
+
+Curl_Using_Socks_Proxy_T1572:
+  process_name: curl
+
+Kubernetes_Service_Account_Token_Created_In_Container_T1609:
+  process_name: kubectl
+
+Netcat_Reverse_Shell_Execution_T1059_004:
+  process_name: nc | ncat
+
+Network_Scanning_Utility_T1046:
+  process_name: pnscan | masscan | wpscan | nmap | zgrab
+
+Process_Hidden_Using_Mount_Hidepid_T1564:
+  process_name: mount
+
+Python_Executed_With_Suspicious_Arguments_T1059_006:
+  process_name: python[23]
+
+Schedule_Cron_Jobs_T1053_003:
+  process_name: crontab
+
+Stop_Antimalware_Process_T1562_001:
+  process_name: service | sysctl
+
+
+
+================================================================================
+FOLDER: 0.9.11
+================================================================================
+
+Total Processes: 28
+Total Rules: 11
+
+Regex Pattern:
+(binwalk|crictl|dd|debugfs|docker|egrep|exiftool|exiv2|fcrackzip|fgrep|find|foremost|grep|insmod|kubectl|ln|locate|mlocate|modprobe|pkexec|printenv|stegCracker|steghide|stegsolve|sudo|sudoedit|wavsteg|zsteg)
+
+--------------------------------------------------------------------------------
+ALPHABETICAL LIST
+--------------------------------------------------------------------------------
+binwalk
+crictl
+dd
+debugfs
+docker
+egrep
+exiftool
+exiv2
+fcrackzip
+fgrep
+find
+foremost
+grep
+insmod
+kubectl
+ln
+locate
+mlocate
+modprobe
+pkexec
+printenv
+stegCracker
+steghide
+stegsolve
+sudo
+sudoedit
+wavsteg
+zsteg
+
+--------------------------------------------------------------------------------
+RULE -> MONITORED PROCESS MAPPINGS
+--------------------------------------------------------------------------------
+
+Create_Symlink_Or_Hardlink_Over_Sensitive_Files_T1548:
+  process_name: ln
+
+Debugfs_Launched_In_Privileged_Container_T1611:
+  process_name: debugfs
+
+DinD_Escape_Attempt_Using_Sock_T1611:
+  process_name: kubectl | docker | crictl
+
+Dump_Memory_For_Credentials_T1003:
+  process_name: insmod | modprobe | dd
+
+Find_Aws_Credentials_T1552_001:
+  process_name: grep | egrep | fgrep | locate | mlocate | find
+
+K8s_PrintEnv_Execution_T1082:
+  process_name: printenv
+
+Polkit_Local_Privilege_Escalation_T1068:
+  process_name: pkexec
+
+Recon_SUID_Binaries_Search_T1087:
+  process_name: find
+
+Search_Private_Keys_And_Passwords_T1552_001:
+  process_name: find | grep | egrep | fgrep
+
+Sudo_Potential_Privilege_Escalation_T1548_003:
+  process_name: sudoedit | sudo
+
+Usage_Of_Steganography_Tools_T1027_003:
+  process_name: steghide | foremost | stegsolve | exiftool | exiv2 | binwalk | zsteg | wavsteg | stegCracker | fcrackzip
+
+
+
+================================================================================
+FOLDER: 0.9.12_experimental
+================================================================================
+
+Total Processes: 180
+Total Rules: 40
+
+Regex Pattern:
+(7z|addgroup|adduser|apache|apache2|arp|ash|autossh|avml|base64|bash|bcc|bfgminer|bminer|ccminer|cgminer|chage|chfn|chgpasswd|chgrp|chmod|chown|chpasswd|chsh|clang|claymore|consul|cpgr|cppw|cpuminer|crash|creddump|crictl|csh|curl|dash|dcp|delgroup|deluser|devmem|dig|docker|dovecot|ethminer|expiry|faillog|flanneld|fluentd|fmem|gcc|gcore|gdb|getcap|gminer|gpasswd|groupadd|groupdel|groupmems|groupmod|grpck|grpconv|grpunconv|gsecdump|gunicorn|gzip|hashdump|hdiutil|host|httpd|httpd-foregroun|id|ifconfig|ingress-nginx|ingress.*|insmod|ip|java|ksh|kubectl|laZagne|lighttpd|ln|login|lolminer|memdump|memfetch|mimipenguin|minerd|minergate|mitmproxy|mke2fs|mkfs|modprobe|mongod|mysqld|nanominer|nbminer|nc|ncat|netcat|netstat|newgrp|newusers|nginx|ngrep|nmap|node|nslookup|passwd|pcredz|perl|phoenixminer|php|php-cgi|php-fpm|php7|php8|ping|pmdump|postgres|procdump|pwck|pwconv|pwunconv|python|python3|rabbitmq-server|redis|redis-cli|redis-server|route|rsync|ruby|scp|sed|sftp|sg|sgminer|sh|shadowconfig|shred|smbd|socat|splunkd|sqlplus|srbminer|ssh|sshd|strace|sudo|systemd|systemd-logind|t-rex|tar|tcpdump|tcsh|teamredminer|telnet|touch|traceroute|tshark|uname|useradd|userdel|usermod|uwsgi|vigr|vipw|volatility|vsftpd|w|wget|who|whoami|wildrig|xmr-stak|xmrig|zip|zmap|zsh)
+
+--------------------------------------------------------------------------------
+ALPHABETICAL LIST
+--------------------------------------------------------------------------------
+7z
+addgroup
+adduser
+apache
+apache2
+arp
+ash
+autossh
+avml
+base64
+bash
+bcc
+bfgminer
+bminer
+ccminer
+cgminer
+chage
+chfn
+chgpasswd
+chgrp
+chmod
+chown
+chpasswd
+chsh
+clang
+claymore
+consul
+cpgr
+cppw
+cpuminer
+crash
+creddump
+crictl
+csh
+curl
+dash
+dcp
+delgroup
+deluser
+devmem
+dig
+docker
+dovecot
+ethminer
+expiry
+faillog
+flanneld
+fluentd
+fmem
+gcc
+gcore
+gdb
+getcap
+gminer
+gpasswd
+groupadd
+groupdel
+groupmems
+groupmod
+grpck
+grpconv
+grpunconv
+gsecdump
+gunicorn
+gzip
+hashdump
+hdiutil
+host
+httpd
+httpd-foregroun
+id
+ifconfig
+ingress-nginx
+ingress.*
+insmod
+ip
+java
+ksh
+kubectl
+laZagne
+lighttpd
+ln
+login
+lolminer
+memdump
+memfetch
+mimipenguin
+minerd
+minergate
+mitmproxy
+mke2fs
+mkfs
+modprobe
+mongod
+mysqld
+nanominer
+nbminer
+nc
+ncat
+netcat
+netstat
+newgrp
+newusers
+nginx
+ngrep
+nmap
+node
+nslookup
+passwd
+pcredz
+perl
+phoenixminer
+php
+php-cgi
+php-fpm
+php7
+php8
+ping
+pmdump
+postgres
+procdump
+pwck
+pwconv
+pwunconv
+python
+python3
+rabbitmq-server
+redis
+redis-cli
+redis-server
+route
+rsync
+ruby
+scp
+sed
+sftp
+sg
+sgminer
+sh
+shadowconfig
+shred
+smbd
+socat
+splunkd
+sqlplus
+srbminer
+ssh
+sshd
+strace
+sudo
+systemd
+systemd-logind
+t-rex
+tar
+tcpdump
+tcsh
+teamredminer
+telnet
+touch
+traceroute
+tshark
+uname
+useradd
+userdel
+usermod
+uwsgi
+vigr
+vipw
+volatility
+vsftpd
+w
+wget
+who
+whoami
+wildrig
+xmr-stak
+xmrig
+zip
+zmap
+zsh
+
+--------------------------------------------------------------------------------
+RULE -> MONITORED PROCESS MAPPINGS
+--------------------------------------------------------------------------------
+
+Basic_Interactive_Reconnaissance_T1082:
+  process_name: w | whoami | id | who | uname
+
+CVE_2025_32463_Root_Shell_Via_Sudo_T1548_003:
+  process_name: sh | bash | dash | zsh | python | python3
+  actor_process_name: sudo
+
+Cloud_Credentials_Accessed_By_Network_Utility_T1552_005:
+  process_name: curl | wget
+
+Compiler_Executed_In_Container_T1027_004:
+  process_name: clang | bcc | gcc
+
+Container_Escape_Using_RUNC_T1611:
+  process_name: ln
+
+Container_Management_Utility_In_Container_T1609:
+  process_name: kubectl | docker | crictl
+
+DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016:
+  process_name: nslookup | dig | host
+
+Db_Program_Spawned_Process_T1210:
+  actor_process_name: mysqld | postgres | sqlplus
+
+Decoding_Payload_In_Container_T1132:
+  process_name: base64
+
+Defense_Evasion_Via_Rootkit_T1222_002:
+  process_name: touch | chgrp
+
+Diamorphine_Process_Hiding_T1564:
+  process_name: sed
+
+Dump_Memory_Utilities_T1003:
+  process_name: devmem | gcore | gdb | strace | crash | memdump | fmem | procdump | pmdump | pcredz | mimipenguin | creddump | gsecdump | hashdump | laZagne | volatility | memfetch | avml
+
+Exploit_Log4j_Vulnerability_CVE_2021_44832_T1190:
+  process_name: bash | sh | curl | wget | nc
+  actor_process_name: java
+
+Exploit_Vsftpd_Vulnerability_T1190:
+  process_name: bash | sh
+  actor_process_name: vsftpd
+
+File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002:
+  process_name: chmod | chown
+
+Gdb_Executed_In_Container_T1055:
+  process_name: gdb
+
+Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004:
+  process_name: bash | sh | curl | wget | nc
+  actor_process_name: nginx | ingress.*
+
+Insmod_Executed_In_Container_T1014:
+  process_name: insmod | modprobe
+
+Interactive_Shell_Spawned_In_Container_T1609:
+  process_name: bash | sh
+
+Known_Cryptominer_Process_Executed_T1496:
+  process_name: xmrig | xmr-stak | minerd | minergate | cpuminer | ccminer | ethminer | cgminer | bfgminer | sgminer | claymore | nbminer | t-rex | gminer | lolminer | phoenixminer | teamredminer | nanominer | bminer | wildrig | srbminer
+
+Launch_Ingress_Remote_File_Copy_Tools_In_Container_T1105:
+  process_name: wget | curl
+
+Launch_Remote_File_Copy_Tools_In_Container_T1021:
+  process_name: rsync | scp | sftp | dcp
+
+Local_Account_Password_Binary_Execution_T1098_007:
+  process_name: passwd | chpasswd | usermod
+
+Log_File_Symlink_To_Null_T1070_002:
+  process_name: ln
+
+Network_Relay_Binary_Exfiltration_Activities_Detected_T1041:
+  process_name: nc | ncat | socat
+
+Process_Capability_Enumeration_T1057:
+  process_name: getcap
+
+Process_Execution_From_Memory_T1106:
+  actor_process_name: bash | sh | python | bash | sh | python | perl | node | curl | wget
+
+Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007:
+  process_name: redis-cli
+
+Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105:
+  process_name: curl | wget | nc | netcat | socat | python | python3 | perl | ruby
+  actor_process_name: redis-server | redis
+
+Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190:
+  process_name: redis-cli
+
+Remove_Bulk_Data_From_Disk_T1485:
+  process_name: shred | mkfs | mke2fs
+
+Reverse_Shell_From_Web_Server_T1059:
+  process_name: bash | sh | python | python3 | perl | ruby
+  actor_process_name: nginx | ingress-nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
+SSH_Process_Launched_From_Inside_A_Container_T1021_004:
+  process_name: ssh | sshd | autossh
+
+Sensitive_Files_Compression_Inside_A_Container_T1552_003:
+  process_name: zip | tar | gzip | hdiutil | 7z
+
+Shell_Spawned_By_Untrusted_Service_T1059_004:
+  process_name: sh | bash | dash | zsh | ksh | csh | tcsh
+  actor_process_name: nginx | ingress-nginx | httpd | apache2 | apache | mysqld | postgres | redis-server | mongod | rabbitmq-server | dovecot | fluentd | flanneld | splunkd | consul | smbd
+
+Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003:
+  process_name: sudo
+
+Suspicious_Network_Utility_Executed_T1016:
+  process_name: nc | ncat | netcat | nmap | dig | tcpdump | tshark | ngrep | telnet | mitmproxy | socat | zmap | nslookup | netstat | ip | ifconfig | ping | traceroute | arp | route
+
+User_Mgmt_Binaries_T1098:
+  process_name: login | systemd | systemd-logind | faillog | newgrp | sg | shadowconfig | grpck | pwunconv | grpconv | pwck | groupmod | vipw | pwconv | useradd | newusers | cppw | chpasswd | usermod | groupadd | groupdel | grpunconv | chgpasswd | userdel | chage | chsh | gpasswd | chfn | expiry | passwd | vigr | cpgr | adduser | addgroup | deluser | delgroup | groupmems | groupmod | grpck | grpconv | grpunconv | newusers | pwck | pwconv | pwunconv | userdel | usermod | vigr | vipw
+
+Web_Server_Spawned_Shell_T1505_003:
+  process_name: ash | bash | csh | ksh | sh | tcsh | zsh | dash
+  actor_process_name: nginx | ingress-nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
+Web_Server_Spawned_Suspicious_Child_Process_T1059:
+  process_name: curl | wget | nc | ncat | netcat | socat | python | python3 | perl | ruby | nmap | id | whoami | uname | base64
+  actor_process_name: nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
+
+
+================================================================================
+COMBINED: ALL FOLDERS
+================================================================================
+
+Total Unique Processes: 213
+Total Rules: 65
+
+Regex Pattern:
+(7z|addgroup|adduser|apache|apache2|arp|ash|autossh|avml|base64|bash|bcc|bfgminer|binwalk|bminer|cat|ccminer|cgminer|chage|chfn|chgpasswd|chgrp|chmod|chown|chpasswd|chsh|clang|claymore|consul|cpgr|cppw|cpuminer|crash|creddump|crictl|crontab|csh|curl|dash|dcp|dd|debugfs|delgroup|deluser|devmem|dig|docker|dovecot|egrep|ethminer|exiftool|exiv2|expiry|faillog|fcrackzip|fgrep|find|flanneld|fluentd|fmem|foremost|gcc|gcore|gdb|getcap|gminer|gpasswd|grep|groupadd|groupdel|groupmems|groupmod|grpck|grpconv|grpunconv|gsecdump|gunicorn|gzip|hashdump|hdiutil|host|httpd|httpd-foregroun|id|ifconfig|ingress-nginx|ingress.*|insmod|ip|java|ksh|kubectl|laZagne|lighttpd|ln|locate|login|lolminer|masscan|memdump|memfetch|mimipenguin|minerd|minergate|mitmproxy|mke2fs|mkfs|mlocate|modprobe|mongod|mount|mysqld|nanominer|nbminer|nc|ncat|netcat|netstat|newgrp|newusers|nginx|ngrep|nmap|node|nslookup|passwd|pcredz|perl|phoenixminer|php|php-cgi|php-fpm|php7|php8|ping|pkexec|pmdump|pnscan|postgres|printenv|procdump|pwck|pwconv|pwunconv|python|python3|python[23]|rabbitmq-server|redis|redis-cli|redis-server|rm|route|rsync|ruby|scp|sed|service|sftp|sg|sgminer|sh|shadowconfig|shred|smbd|socat|splunkd|sqlplus|srbminer|ssh|sshd|stegCracker|steghide|stegsolve|strace|sudo|sudoedit|sysctl|systemd|systemd-logind|t-rex|tar|tcpdump|tcsh|teamredminer|telnet|touch|traceroute|tshark|uname|unshare|useradd|userdel|usermod|uwsgi|vigr|vipw|volatility|vsftpd|w|wavsteg|wget|who|whoami|wildrig|wpscan|xmr-stak|xmrig|zgrab|zip|zmap|zsh|zsteg)
+
+--------------------------------------------------------------------------------
+ALPHABETICAL LIST
+--------------------------------------------------------------------------------
+7z
+addgroup
+adduser
+apache
+apache2
+arp
+ash
+autossh
+avml
+base64
+bash
+bcc
+bfgminer
+binwalk
+bminer
+cat
+ccminer
+cgminer
+chage
+chfn
+chgpasswd
+chgrp
+chmod
+chown
+chpasswd
+chsh
+clang
+claymore
+consul
+cpgr
+cppw
+cpuminer
+crash
+creddump
+crictl
+crontab
+csh
+curl
+dash
+dcp
+dd
+debugfs
+delgroup
+deluser
+devmem
+dig
+docker
+dovecot
+egrep
+ethminer
+exiftool
+exiv2
+expiry
+faillog
+fcrackzip
+fgrep
+find
+flanneld
+fluentd
+fmem
+foremost
+gcc
+gcore
+gdb
+getcap
+gminer
+gpasswd
+grep
+groupadd
+groupdel
+groupmems
+groupmod
+grpck
+grpconv
+grpunconv
+gsecdump
+gunicorn
+gzip
+hashdump
+hdiutil
+host
+httpd
+httpd-foregroun
+id
+ifconfig
+ingress-nginx
+ingress.*
+insmod
+ip
+java
+ksh
+kubectl
+laZagne
+lighttpd
+ln
+locate
+login
+lolminer
+masscan
+memdump
+memfetch
+mimipenguin
+minerd
+minergate
+mitmproxy
+mke2fs
+mkfs
+mlocate
+modprobe
+mongod
+mount
+mysqld
+nanominer
+nbminer
+nc
+ncat
+netcat
+netstat
+newgrp
+newusers
+nginx
+ngrep
+nmap
+node
+nslookup
+passwd
+pcredz
+perl
+phoenixminer
+php
+php-cgi
+php-fpm
+php7
+php8
+ping
+pkexec
+pmdump
+pnscan
+postgres
+printenv
+procdump
+pwck
+pwconv
+pwunconv
+python
+python3
+python[23]
+rabbitmq-server
+redis
+redis-cli
+redis-server
+rm
+route
+rsync
+ruby
+scp
+sed
+service
+sftp
+sg
+sgminer
+sh
+shadowconfig
+shred
+smbd
+socat
+splunkd
+sqlplus
+srbminer
+ssh
+sshd
+stegCracker
+steghide
+stegsolve
+strace
+sudo
+sudoedit
+sysctl
+systemd
+systemd-logind
+t-rex
+tar
+tcpdump
+tcsh
+teamredminer
+telnet
+touch
+traceroute
+tshark
+uname
+unshare
+useradd
+userdel
+usermod
+uwsgi
+vigr
+vipw
+volatility
+vsftpd
+w
+wavsteg
+wget
+who
+whoami
+wildrig
+wpscan
+xmr-stak
+xmrig
+zgrab
+zip
+zmap
+zsh
+zsteg
+
+--------------------------------------------------------------------------------
+RULE -> MONITORED PROCESS MAPPINGS
+--------------------------------------------------------------------------------
+
+Basic_Interactive_Reconnaissance_T1082:
+  process_name: w | whoami | id | who | uname
+
+CVE_2025_32463_Root_Shell_Via_Sudo_T1548_003:
+  process_name: sh | bash | dash | zsh | python | python3
+  actor_process_name: sudo
+
+Clear_System_Logs_T1070_002:
+  process_name: rm
+
+Cloud_Credentials_Accessed_By_Network_Utility_T1552_005:
+  process_name: curl | wget
+
+Compiler_Executed_In_Container_T1027_004:
+  process_name: clang | bcc | gcc
+
+Container_Escape_Using_Docker_Socket_T1611:
+  process_name: docker
+
+Container_Escape_Using_RUNC_T1611:
+  process_name: ln
+
+Container_Escape_Using_Runtime_Socket_T1611:
+  process_name: curl
+
+Container_Escape_Via_Cgroup_T1611:
+  process_name: unshare | mount
+
+Container_Management_Utility_In_Container_T1609:
+  process_name: kubectl | docker | crictl
+
+Create_Symlink_Or_Hardlink_Over_Sensitive_Files_T1548:
+  process_name: ln
+
+Credential_Access_Bash_History_T1552_003:
+  process_name: cat | rm
+
+Cryptominer_Execution_T1496:
+  process_name: modprobe
+
+Curl_Using_Socks_Proxy_T1572:
+  process_name: curl
+
+DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016:
+  process_name: nslookup | dig | host
+
+Db_Program_Spawned_Process_T1210:
+  actor_process_name: mysqld | postgres | sqlplus
+
+Debugfs_Launched_In_Privileged_Container_T1611:
+  process_name: debugfs
+
+Decoding_Payload_In_Container_T1132:
+  process_name: base64
+
+Defense_Evasion_Via_Rootkit_T1222_002:
+  process_name: touch | chgrp
+
+Diamorphine_Process_Hiding_T1564:
+  process_name: sed
+
+DinD_Escape_Attempt_Using_Sock_T1611:
+  process_name: kubectl | docker | crictl
+
+Dump_Memory_For_Credentials_T1003:
+  process_name: insmod | modprobe | dd
+
+Dump_Memory_Utilities_T1003:
+  process_name: devmem | gcore | gdb | strace | crash | memdump | fmem | procdump | pmdump | pcredz | mimipenguin | creddump | gsecdump | hashdump | laZagne | volatility | memfetch | avml
+
+Exploit_Log4j_Vulnerability_CVE_2021_44832_T1190:
+  process_name: bash | sh | curl | wget | nc
+  actor_process_name: java
+
+Exploit_Vsftpd_Vulnerability_T1190:
+  process_name: bash | sh
+  actor_process_name: vsftpd
+
+File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002:
+  process_name: chmod | chown
+
+Find_Aws_Credentials_T1552_001:
+  process_name: grep | egrep | fgrep | locate | mlocate | find
+
+Gdb_Executed_In_Container_T1055:
+  process_name: gdb
+
+Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004:
+  process_name: bash | sh | curl | wget | nc
+  actor_process_name: nginx | ingress.*
+
+Insmod_Executed_In_Container_T1014:
+  process_name: insmod | modprobe
+
+Interactive_Shell_Spawned_In_Container_T1609:
+  process_name: bash | sh
+
+K8s_PrintEnv_Execution_T1082:
+  process_name: printenv
+
+Known_Cryptominer_Process_Executed_T1496:
+  process_name: xmrig | xmr-stak | minerd | minergate | cpuminer | ccminer | ethminer | cgminer | bfgminer | sgminer | claymore | nbminer | t-rex | gminer | lolminer | phoenixminer | teamredminer | nanominer | bminer | wildrig | srbminer
+
+Kubernetes_Service_Account_Token_Created_In_Container_T1609:
+  process_name: kubectl
+
+Launch_Ingress_Remote_File_Copy_Tools_In_Container_T1105:
+  process_name: wget | curl
+
+Launch_Remote_File_Copy_Tools_In_Container_T1021:
+  process_name: rsync | scp | sftp | dcp
+
+Local_Account_Password_Binary_Execution_T1098_007:
+  process_name: passwd | chpasswd | usermod
+
+Log_File_Symlink_To_Null_T1070_002:
+  process_name: ln
+
+Netcat_Reverse_Shell_Execution_T1059_004:
+  process_name: nc | ncat
+
+Network_Relay_Binary_Exfiltration_Activities_Detected_T1041:
+  process_name: nc | ncat | socat
+
+Network_Scanning_Utility_T1046:
+  process_name: pnscan | masscan | wpscan | nmap | zgrab
+
+Polkit_Local_Privilege_Escalation_T1068:
+  process_name: pkexec
+
+Process_Capability_Enumeration_T1057:
+  process_name: getcap
+
+Process_Execution_From_Memory_T1106:
+  actor_process_name: bash | sh | python | bash | sh | python | perl | node | curl | wget
+
+Process_Hidden_Using_Mount_Hidepid_T1564:
+  process_name: mount
+
+Python_Executed_With_Suspicious_Arguments_T1059_006:
+  process_name: python[23]
+
+Recon_SUID_Binaries_Search_T1087:
+  process_name: find
+
+Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007:
+  process_name: redis-cli
+
+Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105:
+  process_name: curl | wget | nc | netcat | socat | python | python3 | perl | ruby
+  actor_process_name: redis-server | redis
+
+Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190:
+  process_name: redis-cli
+
+Remove_Bulk_Data_From_Disk_T1485:
+  process_name: shred | mkfs | mke2fs
+
+Reverse_Shell_From_Web_Server_T1059:
+  process_name: bash | sh | python | python3 | perl | ruby
+  actor_process_name: nginx | ingress-nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
+SSH_Process_Launched_From_Inside_A_Container_T1021_004:
+  process_name: ssh | sshd | autossh
+
+Schedule_Cron_Jobs_T1053_003:
+  process_name: crontab
+
+Search_Private_Keys_And_Passwords_T1552_001:
+  process_name: find | grep | egrep | fgrep
+
+Sensitive_Files_Compression_Inside_A_Container_T1552_003:
+  process_name: zip | tar | gzip | hdiutil | 7z
+
+Shell_Spawned_By_Untrusted_Service_T1059_004:
+  process_name: sh | bash | dash | zsh | ksh | csh | tcsh
+  actor_process_name: nginx | ingress-nginx | httpd | apache2 | apache | mysqld | postgres | redis-server | mongod | rabbitmq-server | dovecot | fluentd | flanneld | splunkd | consul | smbd
+
+Stop_Antimalware_Process_T1562_001:
+  process_name: service | sysctl
+
+Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003:
+  process_name: sudo
+
+Sudo_Potential_Privilege_Escalation_T1548_003:
+  process_name: sudoedit | sudo
+
+Suspicious_Network_Utility_Executed_T1016:
+  process_name: nc | ncat | netcat | nmap | dig | tcpdump | tshark | ngrep | telnet | mitmproxy | socat | zmap | nslookup | netstat | ip | ifconfig | ping | traceroute | arp | route
+
+Usage_Of_Steganography_Tools_T1027_003:
+  process_name: steghide | foremost | stegsolve | exiftool | exiv2 | binwalk | zsteg | wavsteg | stegCracker | fcrackzip
+
+User_Mgmt_Binaries_T1098:
+  process_name: login | systemd | systemd-logind | faillog | newgrp | sg | shadowconfig | grpck | pwunconv | grpconv | pwck | groupmod | vipw | pwconv | useradd | newusers | cppw | chpasswd | usermod | groupadd | groupdel | grpunconv | chgpasswd | userdel | chage | chsh | gpasswd | chfn | expiry | passwd | vigr | cpgr | adduser | addgroup | deluser | delgroup | groupmems | groupmod | grpck | grpconv | grpunconv | newusers | pwck | pwconv | pwunconv | userdel | usermod | vigr | vipw
+
+Web_Server_Spawned_Shell_T1505_003:
+  process_name: ash | bash | csh | ksh | sh | tcsh | zsh | dash
+  actor_process_name: nginx | ingress-nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
+Web_Server_Spawned_Suspicious_Child_Process_T1059:
+  process_name: curl | wget | nc | ncat | netcat | socat | python | python3 | perl | ruby | nmap | id | whoami | uname | base64
+  actor_process_name: nginx | httpd | httpd-foregroun | apache | apache2 | lighttpd | php-fpm | php | php-cgi | php7 | php8 | gunicorn | uwsgi
+
