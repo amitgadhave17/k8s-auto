@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'nslookup nmap.org; sleep infinity']
+    args: ['-c', 'dig nmap.org; sleep infinity']
