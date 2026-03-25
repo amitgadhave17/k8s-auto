@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'gcc -o memfd-exec memfd-exec.c']
+    args: ['-c', 'gcc -o memfd-exec memfd-exec.c; sleep infinity']

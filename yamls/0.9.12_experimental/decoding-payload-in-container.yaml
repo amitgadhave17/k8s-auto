@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: network-utility-executed
+  name: decoding-payload-in-container
 spec:
   restartPolicy: Never
   containers:
-  - name: network-utility-executed
+  - name: decoding-payload-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'tcpdump']
+    args: ['-c', 'echo "bWFsaWNpb3VzIHBheWxvYWQ=" | base64 --decode; sleep infinity']

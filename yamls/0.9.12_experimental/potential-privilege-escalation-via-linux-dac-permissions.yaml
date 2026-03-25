@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', "cp /bin/bash /tmp/testbash; setcap cap_dac_override,cap_dac_read_search+ep /tmp/testbash; sudo -u test /tmp/testbash -c cat /etc/shadow; sleep infinity"]
+    args: ['-c', "cp /bin/bash /tmp/testbash; setcap cap_dac_override,cap_dac_read_search+ep /tmp/testbash; sudo -u test /tmp/testbash -c cat /etc/shadow; sleep infinity; sleep infinity"]

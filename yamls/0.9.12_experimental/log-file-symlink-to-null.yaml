@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: insmod-executed-in-container
+  name: log-file-symlink-to-null
 spec:
   restartPolicy: Never
   containers:
-  - name: insmod-executed-in-container
+  - name: log-file-symlink-to-null
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'modprobe br_netfilter; insmod br_netfilter']
+    args: ['-c', 'ln -sf /dev/null /var/log/syslog; sleep infinity']

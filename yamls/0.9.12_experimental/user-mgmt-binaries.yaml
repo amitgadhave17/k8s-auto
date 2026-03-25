@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user-mgmt-binaries
+spec:
+  restartPolicy: Never
+  containers:
+  - name: user-mgmt-binaries
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'useradd testuser; sleep infinity']

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: defense-evasion-via-rootkit
+spec:
+  restartPolicy: Never
+  containers:
+  - name: defense-evasion-via-rootkit
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'touch /etc/ld.so.preload; sleep infinity']

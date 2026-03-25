@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sensitive-files-compression-inside-a-container
+spec:
+  restartPolicy: Never
+  containers:
+  - name: sensitive-files-compression-inside-a-container
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', ' tar -czf /tmp/sensitive.tar.gz /root/.ssh/id_rsa /etc/passwd /etc/shadow; zip /tmp/dump.zip /etc/passwd /etc/group /root/.bash_history; gzip /home/user/.ssh/id_rsa; 7z a /tmp/aws.7z /home/user/.aws/credentials; echo "Sensitive files compressed inside a container."; ls -l; sleep infinity']

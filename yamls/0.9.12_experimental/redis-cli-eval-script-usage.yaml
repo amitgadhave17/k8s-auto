@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-cli-eval-script-usage
+spec:
+  restartPolicy: Never
+  containers:
+  - name: redis-cli-eval-script-usage
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'cp /bin/bash redis-cli; ./redis-cli EVAL "return redis.call(''set'',KEYS[1],ARGV[1])" 1 key1 value1; sleep infinity']

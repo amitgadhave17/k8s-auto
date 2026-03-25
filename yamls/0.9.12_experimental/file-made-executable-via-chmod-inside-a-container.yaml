@@ -8,4 +8,4 @@ spec:
   - name: file-made-executable-via-chmod-inside-a-container
     image: angelrita/base-ubuntu:latest
     command: ['sh']
-    args: ['-c', 'chmod 4755 memfd-exec; chmod +x memfd-exec']
+    args: ['-c', 'chmod 4755 memfd-exec; chmod +x memfd-exec; sleep infinity']

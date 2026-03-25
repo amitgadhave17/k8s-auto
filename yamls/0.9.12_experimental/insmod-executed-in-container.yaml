@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: local-account-password-modified
+  name: insmod-executed-in-container
 spec:
   restartPolicy: Never
   containers:
-  - name: local-account-password-modified
+  - name: insmod-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'passwd']
+    args: ['-c', 'modprobe br_netfilter; insmod br_netfilter; sleep infinity']

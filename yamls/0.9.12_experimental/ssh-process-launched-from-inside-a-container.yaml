@@ -8,4 +8,4 @@ spec:
   - name: ssh-process-launched-from-inside-a-container
     image: angelrita/base-ubuntu:latest
     command: ['sh']
-    args: ['-c', 'ssh root@10.113.107.226;']
+    args: ['-c', 'ssh -o StrictHostKeyChecking=no root@10.113.107.226 "id"; sleep infinity']

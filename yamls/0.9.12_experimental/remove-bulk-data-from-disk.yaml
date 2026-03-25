@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: db-program-spawned-process
+  name: remove-bulk-data-from-disk
 spec:
   restartPolicy: Never
   containers:
-  - name: db-program-spawned-process
+  - name: remove-bulk-data-from-disk
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'cp /bin/bash mysqld; ./mysqld -c whoami']
+    args: ['-c', 'shred -u /tmp/testfile; sleep infinity']

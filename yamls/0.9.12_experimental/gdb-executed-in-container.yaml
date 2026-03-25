@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: process-hiding
+  name: gdb-executed-in-container
 spec:
   restartPolicy: Never
   containers:
-  - name: process-hiding
+  - name: gdb-executed-in-container
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c']
+    args: ['-c', 'gdb ./memfd-exec; sleep infinity']

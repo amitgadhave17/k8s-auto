@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: container-management-utility-in-container
+  name: network-utility-executed
 spec:
   restartPolicy: Never
   containers:
-  - name: container-management-utility-in-container
+  - name: network-utility-executed
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'docker ps; kubectl get pods -A']
+    args: ['-c', 'tcpdump -i eth0; sleep infinity']

@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', "cp /bin/bash /tmp/testbash; setcap cap_net_raw+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity"]
+    args: ['-c', "tcpdump -i eth0 -w /tmp/capture.pcap; cp /bin/bash /tmp/testbash; setcap cap_net_raw+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity"]

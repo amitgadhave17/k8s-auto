@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dns-lookup-for-often-security-tool-domain-detected
+spec:
+  restartPolicy: Never
+  containers:
+  - name: dns-lookup-for-often-security-tool-domain-detected
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'nslookup nmap.org; sleep infinity']

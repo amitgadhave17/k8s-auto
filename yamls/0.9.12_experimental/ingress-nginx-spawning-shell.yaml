@@ -1,0 +1,15 @@
+#command: nginx spawns shell (CVE-2024-7646)
+#note: actor_process_name should be nginx/ingress for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ingress-nginx-spawning-shell
+spec:
+  restartPolicy: Never
+  containers:
+  - name: ingress-nginx-spawning-shell
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash nginx; ./nginx -c 'bash -c id'; sleep infinity"]

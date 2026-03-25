@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: known-cryptominer-process-executed
+spec:
+  restartPolicy: Never
+  containers:
+  - name: known-cryptominer-process-executed
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'cp /bin/echo /tmp/xmrig; /tmp/xmrig --donate-level 1; sleep infinity']

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: process-capability-enumeration
+spec:
+  restartPolicy: Never
+  containers:
+  - name: Process Capability Enumeration
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'sudo -u test getcap -r /; sleep infinity']

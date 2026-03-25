@@ -1,0 +1,16 @@
+#command: untrusted service (nginx/mysqld/postgres) spawns shell
+#note: actor_process_name should be nginx/mysqld/postgres for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-spawned-by-untrusted-service
+spec:
+  restartPolicy: Never
+  containers:
+  - name: shell-spawned-by-untrusted-service
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash smbd; ./smbd -c bash; sleep infinity"]
+

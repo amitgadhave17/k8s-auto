@@ -1,0 +1,15 @@
+#command: web server (nginx/apache/php-fpm) spawns interactive shell
+#note: actor_process_name should be nginx/apache/php-fpm for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server-spawned-shell
+spec:
+  restartPolicy: Never
+  containers:
+  - name: web-server-spawned-shell
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash nginx; ./nginx -c bash; sleep infinity"]

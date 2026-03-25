@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: container-management-utility-in-container
+spec:
+  restartPolicy: Never
+  containers:
+  - name: container-management-utility-in-container
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'docker ps; kubectl get pods -A; sleep infinity']

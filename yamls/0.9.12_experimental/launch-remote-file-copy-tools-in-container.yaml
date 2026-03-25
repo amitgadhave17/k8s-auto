@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'scp test@10.113.107.226:/home/Downloads/test.png .']
+    args: ['-c', 'scp test@10.113.107.226:/home/Downloads/test.png .; sleep infinity']

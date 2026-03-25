@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: diamorphine-process-hiding
+spec:
+  restartPolicy: Never
+  containers:
+  - name: diamorphine-process-hiding
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'sed -i s/evil_script.py/pnscan/g /var/tmp/.11/..lph/processhider.c; sleep infinity']
