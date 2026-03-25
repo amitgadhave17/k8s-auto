@@ -46,6 +46,8 @@ RUN apt-get install -y kubectl
 #install tcpdump
 RUN apt-get install -y tcpdump
 
+#install dnsutils
+RUN apt-get install -y dnsutils
 
 #install python
 RUN apt-get install -y python3
