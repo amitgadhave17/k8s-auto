@@ -10,3 +10,5 @@ spec:
     #imagePullPolicy: Never
     command: ['sh']
     args: ['-c', "tcpdump -i eth0 -w /tmp/capture.pcap; cp /bin/bash /tmp/testbash; setcap cap_net_raw+ep /tmp/testbash; sudo -u test /tmp/testbash; sleep infinity"]
+    securityContext:
+      privileged: true
