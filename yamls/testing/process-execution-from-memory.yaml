@@ -7,4 +7,3 @@ spec:
   containers:
   - name: process-execution-from-memory
     image: angelrita/memfd-exec:latest
-    args: ['-c', '/proc/self/exe /bin/sh; sleep infinity']

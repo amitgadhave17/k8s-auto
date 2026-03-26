@@ -74,6 +74,8 @@ RUN gcc -o memfd-exec memfd-exec.c
 RUN chmod +x memfd-exec
 
 RUN useradd test
+RUN echo 'test:testpass' | chpasswd
+RUN usermod -aG sudo test
 RUN apt-get install sudo -y
 RUN apt-get install libcap2-bin -y
 RUN apt-get install strace -y
