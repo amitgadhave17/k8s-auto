@@ -1,0 +1,339 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicy
+metadata:
+  name: "advanced-monitoring"
+spec:
+  kprobes:
+  # =====================================================================
+  #  SYMLINK / HARDLINK MONITORING
+  # =====================================================================
+  # Falco gap: "Create Symlink Over Sensitive Files"
+  #            "Create Hardlink Over Sensitive Files"
+  # Detection rules: TDR-L1, TDR-L2, TDR-L3
+  # =====================================================================
+
+  # int symlinkat(const char *oldname, int newdfd, const char *newname)
+  - call: "sys_symlinkat"
+    syscall: true
+    args:
+    - index: 0
+      type: "string"  # oldname — target the symlink points to
+    - index: 1
+      type: "int"      # newdfd  — directory fd (-100 = AT_FDCWD)
+    - index: 2
+      type: "string"  # newname — path of the new symlink
+    selectors:
+    - matchArgs:
+      - index: 0
+        operator: "Prefix"
+        values:
+        - "/etc/shadow"
+        - "/etc/passwd"
+        - "/etc/hostname"
+        - "/etc/machine-id"
+        - "/etc/sudoers"
+        - "/etc/kubernetes/"
+        - "/var/run/docker.sock"
+        - "/run/docker.sock"
+        - "/var/run/containerd/"
+        - "/run/containerd/"
+        - "/var/run/crio/"
+        - "/run/crio/"
+        - "/var/run/secrets/"
+        - "/proc/"
+        - "/root/.ssh/"
+        - "/root/.aws/"
+        - "/root/.git-credentials"
+        - "/root/.netrc"
+        - "/home/"
+
+  # int linkat(int olddfd, const char *oldname,
+  #            int newdfd, const char *newname, int flags)
+  - call: "sys_linkat"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"      # olddfd  — directory fd for source
+    - index: 1
+      type: "string"  # oldname — existing path to link to
+    - index: 2
+      type: "int"      # newdfd  — directory fd for destination
+    - index: 3
+      type: "string"  # newname — path of the new hard link
+    - index: 4
+      type: "int"      # flags   — AT_EMPTY_PATH, AT_SYMLINK_FOLLOW
+    selectors:
+    - matchArgs:
+      - index: 1
+        operator: "Prefix"
+        values:
+        - "/etc/shadow"
+        - "/etc/passwd"
+        - "/etc/hostname"
+        - "/etc/machine-id"
+        - "/etc/sudoers"
+        - "/etc/kubernetes/"
+        - "/var/run/docker.sock"
+        - "/run/docker.sock"
+        - "/var/run/containerd/"
+        - "/run/containerd/"
+        - "/var/run/crio/"
+        - "/run/crio/"
+        - "/var/run/secrets/"
+        - "/proc/"
+        - "/root/.ssh/"
+        - "/root/.aws/"
+        - "/root/.git-credentials"
+        - "/root/.netrc"
+        - "/home/"
+
+  # =====================================================================
+  #  PACKET / RAW SOCKET MONITORING
+  # =====================================================================
+  # Falco gap: "Packet socket created in container"
+  # Detection rules: TDR-S1, TDR-S2
+  # =====================================================================
+
+  # int socket(int family, int type, int protocol)
+  - call: "sys_socket"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"  # family   — AF_PACKET=17, AF_INET=2, AF_INET6=10
+    - index: 1
+      type: "int"  # type     — SOCK_RAW=3, SOCK_DGRAM=2, SOCK_STREAM=1
+    - index: 2
+      type: "int"  # protocol — ETH_P_ALL=3, IPPROTO_RAW=255
+    selectors:
+    # AF_PACKET (family=17) — raw layer-2 access
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "17"
+    # SOCK_RAW + AF_INET — raw IP packets
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "2"
+      - index: 1
+        operator: "Mask"
+        values:
+        - "3"
+    # SOCK_RAW + AF_INET6 — raw IPv6 packets
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "10"
+      - index: 1
+        operator: "Mask"
+        values:
+        - "3"
+
+  # =====================================================================
+  #  FILE DESCRIPTOR REDIRECT MONITORING
+  # =====================================================================
+  # Falco gap: "Redirect STDOUT/STDIN to Network Connection in Container"
+  # Detection rules: TDR-D1, TDR-D2, TDR-SEQ-D1
+  # =====================================================================
+
+  # int dup2(unsigned int oldfd, unsigned int newfd)
+  - call: "sys_dup2"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"  # oldfd — source fd (often a network socket)
+    - index: 1
+      type: "int"  # newfd — 0=stdin, 1=stdout, 2=stderr
+    selectors:
+    - matchArgs:
+      - index: 1
+        operator: "Equal"
+        values:
+        - "0"
+        - "1"
+        - "2"
+
+  # int dup3(unsigned int oldfd, unsigned int newfd, int flags)
+  - call: "sys_dup3"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"  # oldfd
+    - index: 1
+      type: "int"  # newfd — 0=stdin, 1=stdout, 2=stderr
+    - index: 2
+      type: "int"  # flags — O_CLOEXEC
+    selectors:
+    - matchArgs:
+      - index: 1
+        operator: "Equal"
+        values:
+        - "0"
+        - "1"
+        - "2"
+
+  # =====================================================================
+  #  PTRACE MONITORING (extended)
+  # =====================================================================
+  # Falco gap: "PTRACE attached to process / PTRACE anti-debug attempt"
+  # Falco needs evt.arg.request (PTRACE_ATTACH=16, PTRACE_TRACEME=0).
+  # escape-monitoring.yaml has sys_ptrace with args[0] (request) and
+  # args[2] (addr) but skips args[1] (pid). This policy captures the
+  # full signature so detection rules can filter by request type AND pid.
+  # Detection rules: TDR-PT1, TDR-PT2
+  # =====================================================================
+
+  # long ptrace(enum __ptrace_request request, pid_t pid,
+  #             void *addr, void *data)
+  - call: "sys_ptrace"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"  # request — PTRACE_TRACEME=0, PTRACE_ATTACH=16, PTRACE_SEIZE=0x4206
+    - index: 1
+      type: "int"  # pid     — target process ID
+    - index: 2
+      type: "int"  # addr
+    selectors:
+    # PTRACE_TRACEME (0) — anti-debug
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "0"
+    # PTRACE_ATTACH (16) — process injection / debugging
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "16"
+    # PTRACE_SEIZE (0x4206 = 16902) — modern attach variant
+    - matchArgs:
+      - index: 0
+        operator: "Equal"
+        values:
+        - "16902"
+
+  # =====================================================================
+  #  KERNEL MODULE LOADING (extended)
+  # =====================================================================
+  # Falco gap: "Linux Kernel Module Injection Detected"
+  # escape-monitoring.yaml has do_init_module (internal function).
+  # Falco checks the actual init_module/finit_module syscalls.
+  # This adds the raw syscall hooks for defense-in-depth — catches
+  # the attempt even if the module fails to load (do_init_module
+  # only fires on successful init).
+  # Detection rules: TDR-KM1, TDR-KM2
+  # =====================================================================
+
+  # int init_module(void *module_image, unsigned long len,
+  #                 const char *param_values)
+  - call: "sys_init_module"
+    syscall: true
+    args:
+    - index: 1
+      type: "uint64"  # len — module image size
+    - index: 2
+      type: "string"  # param_values — module parameters
+
+  # int finit_module(int fd, const char *param_values, int flags)
+  - call: "sys_finit_module"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"      # fd     — file descriptor to module
+    - index: 1
+      type: "string"  # param_values — module parameters
+    - index: 2
+      type: "int"      # flags  — MODULE_INIT_IGNORE_MODVERSIONS etc.
+
+  # =====================================================================
+  #  K8S API SERVER CONTACT DETECTION
+  # =====================================================================
+  # Falco gap: "Contact K8S API Server From Container"
+  # Falco uses fd.sip.name="kubernetes.default.svc.cluster.local".
+  # We can't resolve DNS names, but tcp_connect gives us dport.
+  # K8s API server listens on 443 and 6443. Combined with existing
+  # tcp_connect from network-monitoring.yaml, detection rules can
+  # match on these ports. This adds security_socket_bind to detect
+  # when a container process binds to the K8s API port (pivot).
+  # Detection rules: TDR-K1
+  # =====================================================================
+
+  # int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
+  # Captures connections to K8s API server port 6443 specifically.
+  # Port 443 is too broad (all HTTPS) — handled by detection rule logic.
+  - call: "tcp_connect"
+    syscall: false
+    args:
+    - index: 0
+      type: "sock"
+    selectors:
+    - matchArgs:
+      - index: 0
+        operator: "DPort"
+        values:
+        - "6443"
+
+  # =====================================================================
+  #  SSH NON-STANDARD PORT DETECTION
+  # =====================================================================
+  # Falco gap: "Disallowed SSH Connection Non Standard Port"
+  # network-monitoring.yaml captures all tcp_connect events already.
+  # This adds a focused selector for SSH-related ports to enable
+  # efficient detection of SSH over non-standard ports.
+  # Detection rules: TDR-SSH1
+  # =====================================================================
+
+  # Outbound SSH connections on non-standard ports.
+  # Standard port 22 is covered by TDR-011. This captures alternative
+  # SSH ports commonly used for evasion: 2222, 2022, 8022, 222, 10022.
+  - call: "tcp_connect"
+    syscall: false
+    args:
+    - index: 0
+      type: "sock"
+    selectors:
+    - matchArgs:
+      - index: 0
+        operator: "DPort"
+        values:
+        - "2222"
+        - "2022"
+        - "8022"
+        - "222"
+        - "10022"
+
+  # =====================================================================
+  #  FILELESS EXECUTION — memfd_create (extended)
+  # =====================================================================
+  # Falco gap: "Fileless execution via memfd_create"
+  # escape-monitoring.yaml has sys_memfd_create already.
+  # This adds sys_execveat which is used to execute from an fd
+  # (including memfd) without a filesystem path — the second half
+  # of the fileless execution chain.
+  # Detection rules: TDR-FE1
+  # =====================================================================
+
+  # int execveat(int dirfd, const char *pathname,
+  #              char *const argv[], char *const envp[], int flags)
+  # AT_EMPTY_PATH flag (0x1000) + fd from memfd_create = fileless exec
+  - call: "sys_execveat"
+    syscall: true
+    args:
+    - index: 0
+      type: "int"      # dirfd — fd from memfd_create
+    - index: 1
+      type: "string"  # pathname — empty string when AT_EMPTY_PATH
+    - index: 4
+      type: "int"      # flags — AT_EMPTY_PATH=0x1000
+    selectors:
+    # AT_EMPTY_PATH (0x1000 = 4096) — execute from fd, no path
+    - matchArgs:
+      - index: 4
+        operator: "Mask"
+        values:
+        - "4096"
