@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'modprobe msr allow_writes=on']
+    args: ['-c', 'modprobe msr allow_writes=on; ; sleep infinity']
