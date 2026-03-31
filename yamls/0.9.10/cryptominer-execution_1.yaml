@@ -5,7 +5,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-  - name: clear-system-logs
+  - name: cryptominer-execution
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
