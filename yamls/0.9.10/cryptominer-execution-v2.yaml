@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: cryptominer-execution
+  name: cryptominer-execution-v2
 spec:
   restartPolicy: Never
   containers:
-  - name: cryptominer-execution
+  - name: cryptominer-execution-v2
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
