@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cryptominer-execution
+spec:
+  restartPolicy: Never
+  containers:
+  - name: clear-system-logs
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ['-c', 'modprobe msr allow_writes=on']
