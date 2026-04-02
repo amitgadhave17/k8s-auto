@@ -1,0 +1,158 @@
+2026-04-02T19:15:02.135+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:02.416+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:03.145+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:03.706+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Exploit_Vsftpd_Vulnerability_T1190}
+{container_name} --> {exploit-vsftpd-vulnerability}
+2026-04-02T19:15:06.028+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003}
+{container_name} --> {root-shell-via-sudo-cve-2025-32463}
+2026-04-02T19:15:07.767+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Remove_Bulk_Data_From_Disk_T1485}
+{container_name} --> {remove-bulk-data-from-disk}
+2026-04-02T19:15:08.582+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Launch_Ingress_Remote_File_Copy_Tools_In_Container_T1105}
+{container_name} --> {launch-ingress-remote-file-copy-tools-in-container}
+2026-04-02T19:15:09.645+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Cloud_Credentials_Accessed_By_Network_Utility_T1552_005}
+{container_name} --> {exploit-log4j-vulnerability}
+2026-04-02T19:15:09.651+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Exploit_Log4j_Vulnerability_CVE_2021_44832_T1190}
+{container_name} --> {exploit-log4j-vulnerability}
+2026-04-02T19:15:11.644+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190}
+{container_name} --> {redis-xackdel-with-large-ids-count}
+2026-04-02T19:15:15.499+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Suspicious_Network_Utility_Executed_T1016}
+{container_name} --> {network-traffic-capture-via-cap-net-raw}
+2026-04-02T19:15:16.587+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105}
+{container_name} --> {redis-server-launches-suspicious-tooling}
+2026-04-02T19:15:17.937+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Db_Program_Spawned_Process_T1210}
+{container_name} --> {db-program-spawned-process}
+2026-04-02T19:15:18.761+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Launch_Remote_File_Copy_Tools_In_Container_T1021}
+{container_name} --> {launch-remote-file-copy-tools-in-container}
+2026-04-02T19:15:19.819+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {User_Mgmt_Binaries_T1098}
+{container_name} --> {user-mgmt-binaries}
+2026-04-02T19:15:23.053+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sensitive_Files_Compression_Inside_A_Container_T1552_003}
+{container_name} --> {sensitive-files-compression-inside-a-container}
+2026-04-02T19:15:23.842+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sensitive_Files_Compression_Inside_A_Container_T1552_003}
+{container_name} --> {sensitive-files-compression-inside-a-container}
+2026-04-02T19:15:24.108+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sensitive_Files_Compression_Inside_A_Container_T1552_003}
+{container_name} --> {sensitive-files-compression-inside-a-container}
+2026-04-02T19:15:24.397+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sensitive_Files_Compression_Inside_A_Container_T1552_003}
+{container_name} --> {sensitive-files-compression-inside-a-container}
+2026-04-02T19:15:24.649+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sensitive_Files_Compression_Inside_A_Container_T1552_003}
+{container_name} --> {sensitive-files-compression-inside-a-container}
+2026-04-02T19:15:25.743+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Suspicious_Network_Utility_Executed_T1016}
+{container_name} --> {network-relay-binary-exfiltration-activities-detected}
+2026-04-02T19:15:26.570+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Known_Cryptominer_Process_Executed_T1496}
+{container_name} --> {known-cryptominer-process-executed}
+2026-04-02T19:15:27.964+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Shell_Spawned_By_Untrusted_Service_T1059_004}
+{container_name} --> {shell-spawned-by-untrusted-service}
+2026-04-02T19:15:30.981+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Log_File_Symlink_To_Null_T1070_002}
+{container_name} --> {log-file-symlink-to-null}
+2026-04-02T19:15:31.802+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:32.077+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:32.359+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {basic-interactive-reconnaissance}
+2026-04-02T19:15:32.912+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Decoding_Payload_In_Container_T1132}
+{container_name} --> {decoding-payload-in-container}
+2026-04-02T19:15:33.195+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Decoding_Payload_In_Container_T1132}
+{container_name} --> {decoding-payload-in-container}
+2026-04-02T19:15:34.054+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Dump_Memory_Utilities_T1003}
+{container_name} --> {dump-memory-utilities}
+2026-04-02T19:15:34.871+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Dump_Memory_Utilities_T1003}
+{container_name} --> {dump-memory-utilities}
+2026-04-02T19:15:34.874+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Gdb_Executed_In_Container_T1055}
+{container_name} --> {dump-memory-utilities}
+2026-04-02T19:15:35.738+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003}
+{container_name} --> {sudo-chroot-execution-cve-2025-32463}
+2026-04-02T19:15:36.817+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Container_Escape_Using_RUNC_T1611}
+{container_name} --> {container-escape-using-runc}
+2026-04-02T19:15:37.610+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{SSH_Process_Launched_From_Inside_A_Container_T1021_004}
+{container_name} --> {ssh-process-launched-from-inside-a-container}
+2026-04-02T19:15:38.452+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Dump_Memory_Utilities_T1003}
+{container_name} --> {gdb-executed-in-container}
+2026-04-02T19:15:38.456+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Gdb_Executed_In_Container_T1055}
+{container_name} --> {gdb-executed-in-container}
+2026-04-02T19:15:39.520+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Local_Account_Password_Binary_Execution_T1098_007}
+{container_name} --> {local-account-password-binary-execution}
+2026-04-02T19:15:39.524+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {User_Mgmt_Binaries_T1098}
+{container_name} --> {local-account-password-binary-execution}
+2026-04-02T19:15:41.890+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Insmod_Executed_In_Container_T1014}
+{container_name} --> {insmod-executed-in-container}
+2026-04-02T19:15:42.168+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Insmod_Executed_In_Container_T1014}
+{container_name} --> {insmod-executed-in-container}
+2026-04-02T19:15:43.000+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002}
+{container_name} --> {file-made-executable-via-chmod-inside-a-container}
+2026-04-02T19:15:43.281+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002}
+{container_name} --> {file-made-executable-via-chmod-inside-a-container}
+2026-04-02T19:15:44.136+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Defense_Evasion_Via_Rootkit_T1222_002}
+{container_name} --> {defense-evasion-via-rootkit}
+2026-04-02T19:15:45.542+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004}
+{container_name} --> {ingress-nginx-spawning-shell}
+2026-04-02T19:15:45.546+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Shell_Spawned_By_Untrusted_Service_T1059_004}
+{container_name} --> {ingress-nginx-spawning-shell}
+2026-04-02T19:15:45.550+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Web_Server_Spawned_Shell_T1505_003}
+{container_name} --> {ingress-nginx-spawning-shell}
+2026-04-02T19:15:45.806+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Basic_Interactive_Reconnaissance_T1082}
+{container_name} --> {ingress-nginx-spawning-shell}
+2026-04-02T19:15:46.626+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Diamorphine_Process_Hiding_T1564}
+{container_name} --> {diamorphine-process-hiding}
+2026-04-02T19:15:48.241+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Suspicious_Network_Utility_Executed_T1016}
+{container_name} --> {network-utility-executed}
+2026-04-02T19:15:48.780+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Container_Management_Utility_In_Container_T1609}
+{container_name} --> {container-management-utility-in-container}
+2026-04-02T19:15:49.891+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004}
+{container_name} --> {web-server-spawned-suspicious-child-process}
+2026-04-02T19:15:49.893+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Web_Server_Spawned_Suspicious_Child_Process_T1059}
+{container_name} --> {web-server-spawned-suspicious-child-process}
+2026-04-02T19:15:50.441+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Container_Management_Utility_In_Container_T1609}
+{container_name} --> {container-management-utility-in-container}
+2026-04-02T19:15:52.088+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007}
+{container_name} --> {redis-cli-eval-script-usage}
+2026-04-02T19:15:53.744+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004}
+{container_name} --> {web-server-spawned-shell}
+2026-04-02T19:15:53.746+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Shell_Spawned_By_Untrusted_Service_T1059_004}
+{container_name} --> {web-server-spawned-shell}
+2026-04-02T19:15:53.749+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Web_Server_Spawned_Shell_T1505_003}
+{container_name} --> {web-server-spawned-shell}
+2026-04-02T19:15:55.536+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Compiler_Executed_In_Container_T1027_004}
+{container_name} --> {compiler-executed-in-container}
+2026-04-02T19:15:56.911+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Process_Capability_Enumeration_T1057}
+{container_name} --> {process-capability-enumeration}
+2026-04-02T19:15:57.723+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Reverse_Shell_From_Web_Server_T1059}
+{container_name} --> {reverse-shell-from-web-server}
+2026-04-02T19:15:57.727+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Shell_Spawned_By_Untrusted_Service_T1059_004}
+{container_name} --> {reverse-shell-from-web-server}
+2026-04-02T19:15:57.733+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Web_Server_Spawned_Shell_T1505_003}
+{container_name} --> {reverse-shell-from-web-server}
+2026-04-02T19:15:57.992+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Potential_Privilege_Escalation_Via_Linux_DAC_Permissions_T1068}
+{container_name} --> {potential-privilege-escalation-via-linux-dac-permissions}
+2026-04-02T19:15:58.566+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Root_Shell_Via_Sudo_CVE_2025_32463_T1548_003}
+{container_name} --> {root-shell-via-sudo-cve-2025-32463}
+2026-04-02T19:15:58.837+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016}
+{container_name} --> {dns-lookup-for-often-security-tool-domain-detected}
+2026-04-02T19:15:58.840+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Suspicious_Network_Utility_Executed_T1016}
+{container_name} --> {dns-lookup-for-often-security-tool-domain-detected}
+2026-04-02T19:15:59.115+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Network_Traffic_Capture_Via_CAP_NET_RAW_T1040}
+{container_name} --> {network-traffic-capture-via-cap-net-raw}
+2026-04-02T19:15:59.424+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Log_File_Symlink_To_Null_T1070_002}
+{container_name} --> {log-file-symlink-to-null}
