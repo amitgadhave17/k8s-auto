@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ["sh"]
-    args: ["-c", "cp /bin/bash /tmp/testbash; ./tmp/testbash -c 'ln -sf /dev/null /var/log/syslog; sleep infinity'"]
+    args: ["-c", "cp /bin/bash testbash; ./testbash -c \"ln -sf /dev/null /var/log/syslog\"; sleep infinity"]
