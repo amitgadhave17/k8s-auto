@@ -156,3 +156,6 @@
 {container_name} --> {network-traffic-capture-via-cap-net-raw}
 2026-04-02T19:15:59.424+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} --> {Log_File_Symlink_To_Null_T1070_002}
 {container_name} --> {log-file-symlink-to-null}
+2026-04-02T19:24:41.524+05:30 DEBUG 34188 --- [siddhiKafkaThreadPoolTaskExecutor-1] com.qualys.qtd.siddhi.InMemoryEngine     : Received event: {title} -->
+{Cloud_Credentials_Accessed_By_Network_Utility_T1552_005}
+{container_name} --> {cloud-credentials-accessed-by-network-utility}
