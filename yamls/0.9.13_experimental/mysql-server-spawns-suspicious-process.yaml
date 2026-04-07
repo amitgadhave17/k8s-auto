@@ -1,0 +1,15 @@
+#command: mysqld spawns shell (generic MySQL RCE)
+#note: actor_process_name should be mysqld for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-server-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: mysql-server-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash mysqld_safe; cp /bin/bash mysqld; ./mysqld -c 'bash -c id'; sleep infinity"]

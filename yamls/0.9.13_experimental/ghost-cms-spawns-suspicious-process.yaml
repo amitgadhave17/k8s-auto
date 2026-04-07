@@ -1,0 +1,15 @@
+#command: node (ghost) spawns shell (generic Ghost CMS RCE)
+#note: actor_process_name should be node with ghost in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ghost-cms-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: ghost-cms-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash node; ./node -c 'bash -c id' ghost; sleep infinity"]

@@ -1,0 +1,15 @@
+#command: haproxy spawns shell (generic HAProxy RCE)
+#note: actor_process_name should be haproxy for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: haproxy-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: haproxy-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash haproxy; ./haproxy -c 'bash -c id'; sleep infinity"]

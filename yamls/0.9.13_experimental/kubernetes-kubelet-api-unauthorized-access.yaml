@@ -1,0 +1,15 @@
+#command: curl to Kubelet API port 10250 (Kubelet access)
+#note: process_name should be curl with :10250 or /pods in cmd_line
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-kubelet-api-unauthorized-access
+spec:
+  restartPolicy: Never
+  containers:
+  - name: kubernetes-kubelet-api-unauthorized-access
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "curl -k https://node-ip:10250/pods; sleep infinity"]

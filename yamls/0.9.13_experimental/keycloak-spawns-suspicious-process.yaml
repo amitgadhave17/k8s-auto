@@ -1,0 +1,15 @@
+#command: java (keycloak) spawns shell (generic Keycloak RCE)
+#note: actor_process_name should be java with keycloak in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: keycloak-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: keycloak-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash java; ./java -c 'bash -c id' keycloak; sleep infinity"]

@@ -1,0 +1,15 @@
+#command: php-fpm spawns shell (generic PHP-FPM RCE)
+#note: actor_process_name should be php-fpm for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: php-fpm-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: php-fpm-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash php-fpm; ./php-fpm -c 'bash -c id'; sleep infinity"]

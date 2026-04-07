@@ -1,0 +1,15 @@
+#command: traefik spawns shell (generic Traefik RCE)
+#note: actor_process_name should be traefik for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traefik-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: traefik-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash traefik; ./traefik -c 'bash -c id'; sleep infinity"]

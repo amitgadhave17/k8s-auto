@@ -1,0 +1,15 @@
+#command: java (spring boot) spawns shell (Spring Boot Actuator RCE)
+#note: actor_process_name should be java with spring in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-boot-actuator-rce
+spec:
+  restartPolicy: Never
+  containers:
+  - name: spring-boot-actuator-rce
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash java; ./java -c 'bash -c id' spring boot; sleep infinity"]

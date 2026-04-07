@@ -1,0 +1,15 @@
+#command: consul spawns shell (generic Consul RCE)
+#note: actor_process_name should be consul for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consul-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: consul-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash consul; ./consul -c 'bash -c id'; sleep infinity"]

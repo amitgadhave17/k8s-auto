@@ -1,0 +1,15 @@
+#command: python (sentry) spawns shell (generic Sentry RCE)
+#note: actor_process_name should be python/sentry with sentry in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sentry-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: sentry-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash sentry; ./sentry -c 'bash -c id' sentry; sleep infinity"]

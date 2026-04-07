@@ -1,0 +1,15 @@
+#command: beam.smp (CouchDB) spawns shell (generic CouchDB RCE)
+#note: actor_process_name should be beam.smp/couchdb for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: couchdb-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: couchdb-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash beam.smp; ./beam.smp -c 'bash -c id'; sleep infinity"]

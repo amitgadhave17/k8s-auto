@@ -1,0 +1,15 @@
+#command: harbor-core spawns shell (generic Harbor RCE)
+#note: actor_process_name should be harbor-core for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: harbor-registry-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: harbor-registry-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash harbor-core; ./harbor-core -c 'bash -c id'; sleep infinity"]

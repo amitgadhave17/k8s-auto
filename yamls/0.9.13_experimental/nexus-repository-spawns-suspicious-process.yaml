@@ -1,0 +1,15 @@
+#command: java (nexus) spawns shell (generic Nexus RCE)
+#note: actor_process_name should be java with nexus in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nexus-repository-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: nexus-repository-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash java; ./java -c 'bash -c id' nexus; sleep infinity"]

@@ -1,0 +1,15 @@
+#command: curl to kubernetes API with token (token theft)
+#note: process_name should be curl with kubernetes.default or /api/v1/ in cmd_line
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-api-server-token-theft
+spec:
+  restartPolicy: Never
+  containers:
+  - name: kubernetes-api-server-token-theft
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "curl -k -H 'Authorization: Bearer token' https://kubernetes.default/api/v1/secrets; sleep infinity"]

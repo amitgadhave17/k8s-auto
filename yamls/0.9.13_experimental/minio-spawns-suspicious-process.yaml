@@ -1,0 +1,15 @@
+#command: minio spawns shell (generic MinIO RCE)
+#note: actor_process_name should be minio for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minio-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: minio-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash minio; ./minio -c 'bash -c id'; sleep infinity"]

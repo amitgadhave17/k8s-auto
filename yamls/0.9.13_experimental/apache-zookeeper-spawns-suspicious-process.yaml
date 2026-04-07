@@ -1,0 +1,15 @@
+#command: java (zookeeper) spawns shell (generic Zookeeper RCE)
+#note: actor_process_name should be java with zookeeper in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache-zookeeper-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: apache-zookeeper-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash java; ./java -c 'bash -c id' zookeeper; sleep infinity"]

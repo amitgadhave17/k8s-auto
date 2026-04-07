@@ -1,0 +1,15 @@
+#command: varnishd spawns shell (generic Varnish RCE)
+#note: actor_process_name should be varnishd for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: varnish-cache-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: varnish-cache-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash varnishd; ./varnishd -c 'bash -c id'; sleep infinity"]

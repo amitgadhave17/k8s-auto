@@ -1,0 +1,15 @@
+#command: java (elasticsearch) spawns shell (generic Elasticsearch RCE)
+#note: actor_process_name should be java with elasticsearch in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: elasticsearch-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: elasticsearch-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash java; ./java -c 'bash -c id' elasticsearch; sleep infinity"]

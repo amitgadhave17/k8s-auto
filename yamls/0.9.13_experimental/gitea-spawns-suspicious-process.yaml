@@ -1,0 +1,15 @@
+#command: gitea spawns shell (generic Gitea RCE)
+#note: actor_process_name should be gitea for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gitea-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: gitea-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash gitea; ./gitea -c 'bash -c id'; sleep infinity"]

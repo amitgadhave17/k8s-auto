@@ -1,0 +1,15 @@
+#command: nc connects to Memcached port 11211 (unauthorized access)
+#note: process_name should be nc/telnet with :11211 in cmd_line
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memcached-unauthorized-access
+spec:
+  restartPolicy: Never
+  containers:
+  - name: memcached-unauthorized-access
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "nc memcached-host 11211; sleep infinity"]

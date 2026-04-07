@@ -1,0 +1,15 @@
+#command: python (odoo) spawns shell (generic Odoo RCE)
+#note: actor_process_name should be python/odoo with odoo in cmd_line for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: odoo-erp-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: odoo-erp-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash odoo; ./odoo -c 'bash -c id' odoo; sleep infinity"]

