@@ -9,4 +9,4 @@ spec:
     image: angelrita/base-ubuntu:latest
     #imagePullPolicy: Never
     command: ['sh']
-    args: ['-c', 'cp /bin/bash pwnkit; ./pwnkit; sleep infinity']
+    args: ['-c', 'cp /bin/bash pkexec; ./pkexec; sleep infinity']

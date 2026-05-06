@@ -89,6 +89,47 @@ $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
         except Exception as e:
             print(f"Error opening window for {pod_name}: {e}")
             
+    elif os_type == "Darwin":
+        # macOS - use Terminal.app via osascript
+        if activity_name and search_string:
+            # Filter by both activity_name and search string
+            activity_filter = f"grep -E '\"activity_name\":\"[^\"]*{activity_name}[^\"]*\"'"
+            if use_regex:
+                search_filter = f"grep -E '{search_string}'"
+            else:
+                search_filter = f"grep -F '{search_string}'"
+            bash_command = f"kubectl logs -f {pod_name} -n {namespace} | {activity_filter} | {search_filter}"
+        elif activity_name:
+            # Filter by activity_name only
+            bash_command = f"kubectl logs -f {pod_name} -n {namespace} | grep -E '\"activity_name\":\"[^\"]*{activity_name}[^\"]*\"'"
+        elif use_regex:
+            bash_command = f"kubectl logs -f {pod_name} -n {namespace} | grep -E '{search_string}'"
+        else:
+            bash_command = f"kubectl logs -f {pod_name} -n {namespace} | grep -F '{search_string}'"
+        
+        # Build filter display string
+        if activity_name and search_string:
+            filter_display = f"activity_name={activity_name} AND search={search_string}"
+        elif activity_name:
+            filter_display = f"activity_name={activity_name}"
+        else:
+            filter_display = search_string
+        
+        # Create AppleScript to open new Terminal window
+        applescript = f'''
+tell application "Terminal"
+    do script "echo 'Tailing logs for pod: {pod_name}'; echo 'Namespace: {namespace}'; echo 'Filter: {filter_display}'; echo '-----------------------------------'; echo 'Press Ctrl+C to stop tailing (window will stay open)'; echo '-----------------------------------'; echo ''; {bash_command}; echo ''; echo 'Tailing stopped. Scroll up to review logs.'; read -p 'Press Enter to close window...'"
+    set custom title of front window to "{pod_name}"
+    activate
+end tell
+'''
+        
+        try:
+            subprocess.Popen(["osascript", "-e", applescript])
+            print(f"Opened log window for pod: {pod_name}")
+        except Exception as e:
+            print(f"Error opening window for {pod_name}: {e}")
+            
     elif os_type == "Linux":
         # Bash command for Linux (using grep for filtering) with tail/follow
         if activity_name and search_string:
@@ -132,12 +173,12 @@ $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
             print(f"Please install one of: gnome-terminal, xterm, konsole, or xfce4-terminal")
     else:
         print(f"Unsupported operating system: {os_type}")
-        print(f"This script supports Windows and Linux only.")
+        print(f"This script supports Windows, macOS, and Linux.")
 
 def parse_arguments():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="View logs from multiple Kubernetes pods in separate terminal windows (Windows & Linux)",
+        description="View logs from multiple Kubernetes pods in separate terminal windows (Windows, macOS & Linux)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
         Examples:
