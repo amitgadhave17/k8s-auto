@@ -1,0 +1,269 @@
+================================================================================
+CROSS VERIFICATION: 0.9.12_experimental & 0.9.13_experimental
+================================================================================
+Date: July 6, 2026
+
+================================================================================
+0.9.12_EXPERIMENTAL VERIFICATION
+================================================================================
+
+RULES PROVIDED (33 total):
+1. Cloud_Credentials_Accessed_By_Network_Utility_T1552_005
+2. Compiler_Executed_In_Container_T1027_004
+3. Container_Escape_Using_RUNC_T1611
+4. Container_Management_Utility_In_Container_T1609
+5. DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016
+6. Db_Program_Spawned_Process_T1210
+7. Decoding_Payload_In_Container_T1132
+8. Defense_Evasion_Via_Rootkit_T1222_002
+9. Diamorphine_Process_Hiding_T1564
+10. Dump_Memory_Utilities_T1003
+11. Exploit_Vsftpd_Vulnerability_T1190
+12. File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002
+13. Gdb_Executed_In_Container_T1055
+14. Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004
+15. Insmod_Executed_In_Container_T1014
+16. Known_Cryptominer_Process_Executed_T1496
+17. Launch_Remote_File_Copy_Tools_In_Container_T1021
+18. Local_Account_Password_Binary_Execution_T1098_007
+19. Log_File_Symlink_To_Null_T1070_002
+20. Network_Traffic_Capture_Via_CAP_NET_RAW_T1040
+21. Potential_Privilege_Escalation_Via_Linux_DAC_Permissions_T1068
+22. Process_Capability_Enumeration_T1057
+23. Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007
+24. Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105
+25. Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190
+26. Remove_Bulk_Data_From_Disk_T1485
+27. Reverse_Shell_From_Web_Server_T1059
+28. Root_Shell_Via_Sudo_CVE_2025_32463_T1548_003
+29. Sensitive_Files_Compression_Inside_A_Container_T1552_003
+30. Shell_Spawned_By_Untrusted_Service_T1059_004
+31. Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003
+32. Suspicious_Network_Utility_Executed_T1016
+33. User_Mgmt_Binaries_T1098
+
+Note: GoLang_SSH_GSSAPI_Memory_Exhaustion_CVE_2025_58181_T1499 removed from 0.9.12 (exists in 0.9.13)
+
+YAMLS IN FOLDER (33 total):
+1. cloud-credentials-accessed-by-network-utility.yaml ✓
+2. compiler-executed-in-container.yaml ✓
+3. container-escape-using-runc.yaml ✓
+4. container-management-utility-in-container.yaml ✓
+5. db-program-spawned-process.yaml ✓
+6. decoding-payload-in-container.yaml ✓
+7. defense-evasion-via-rootkit.yaml ✓
+8. diamorphine-process-hiding.yaml ✓
+9. dns-lookup-for-often-security-tool-domain-detected.yaml ✓
+10. dump-memory-utilities.yaml ✓
+11. exploit-vsftpd-vulnerability.yaml ✓
+12. file-made-executable-via-chmod-inside-a-container.yaml ✓
+13. gdb-executed-in-container.yaml ✓
+14. ingress-nginx-spawning-shell-possible-cve-2024-7646-exploitation.yaml ✓
+15. insmod-executed-in-container.yaml ✓
+16. known-cryptominer-process-executed.yaml ✓
+17. launch-remote-file-copy-tools-in-container.yaml ✓
+18. local-account-password-binary-execution.yaml ✓
+19. log-file-symlink-to-null.yaml ✓
+20. network-traffic-capture-via-cap-net-raw.yaml ✓
+21. potential-privilege-escalation-via-linux-dac-permissions.yaml ✓
+22. process-capability-enumeration.yaml ✓
+23. redis-cli-eval-script-usage-possible-cve-2025-49844-attempt.yaml ✓
+24. redis-server-launches-suspicious-tooling-possible-cve-2025-49844-exploitation.yaml ✓
+25. redis-xackdel-with-large-ids-count-possible-cve-2025-62507-attempt.yaml ✓
+26. remove-bulk-data-from-disk.yaml ✓
+27. reverse-shell-from-web-server.yaml ✓
+28. root-shell-via-sudo-cve-2025-32463.yaml ✓
+29. sensitive-files-compression-inside-a-container.yaml ✓
+30. shell-spawned-by-untrusted-service.yaml ✓
+31. sudo-chroot-privilege-escalation-cve-2025-32463.yaml ✓
+32. suspicious-network-utility-executed.yaml ✓
+33. user-mgmt-binaries.yaml ✓
+
+RESULT 0.9.12:
+✅ 33 YAMLs - ALL have matching rules
+✅ 33 Rules matched (out of 33 provided)
+✅ 100% COVERAGE - All rules have YAMLs!
+
+DEPRECATED (moved to yamls/deprecated):
+1. basic-interactive-reconnaissance.yaml
+2. exploit-log4j-vulnerability-cve-2021-44832.yaml
+3. launch-ingress-remote-file-copy-tools-in-container.yaml
+4. ssh-process-launched-from-inside-a-container.yaml
+5. web-server-spawned-shell.yaml
+6. web-server-spawned-suspicious-child-process.yaml
+
+================================================================================
+0.9.13_EXPERIMENTAL VERIFICATION
+================================================================================
+
+RULES PROVIDED (69 total):
+1. Apache_Airflow_Edge_Provider_RCE_CVE_2025_67895_T1190
+2. Apache_HTTPD_TLS_Access_Bypass_CVE_2025_23048_T1190
+3. Apache_Kafka_OAuth_JNDI_RCE_CVE_2025_27817_T1190
+4. Apache_Solr_RCE_ConfigSet_CVE_2025_24814_T1190
+5. Apache_Tomcat_Deserialization_RCE_CVE_2025_24813_T1190
+6. Apache_Zookeeper_Spawns_Suspicious_Process_T1190
+7. ArgoCD_API_Unauthorized_Access_CVE_2025_55190_T1190
+8. Consul_Spawns_Suspicious_Process_T1190
+9. CoreDNS_ACL_Bypass_TOCTOU_CVE_2026_26017_T1071_004
+10. CoreDNS_Remote_DoS_CVE_2026_26018_T1499
+11. CouchDB_Spawns_Suspicious_Process_T1190
+12. Docker_Container_Cryptominer_Deployment_CVE_2025_9074_T1496
+13. Docker_Container_Escape_Via_Engine_API_CVE_2025_9074_T1611
+14. Docker_Model_Runner_Flag_Injection_CVE_2026_28400_T1190
+15. Docker_Unauthenticated_Engine_API_Access_CVE_2025_9074_T1610
+16. Elasticsearch_Spawns_Suspicious_Process_T1190
+17. Envoy_Istio_Request_Smuggling_CVE_2025_66220_T1190
+18. Ghost_CMS_Spawns_Suspicious_Process_T1190
+19. Gitea_Spawns_Suspicious_Process_T1190
+20. GitHub_Actions_Runner_Spawns_Suspicious_Process_T1059
+21. GitLab_Runner_Spawns_Suspicious_Process_T1059
+22. GitLab_SAML_Auth_Bypass_CVE_2025_25291_T1078
+23. Glibc_DNS_Memory_Leak_CVE_2026_0915_T1005
+24. Glibc_Heap_Corruption_Memalign_CVE_2026_0861_T1203
+25. GoLang_SSH_Agent_Malformed_Identity_DoS_CVE_2025_47914_T1499
+26. GoLang_SSH_GSSAPI_Memory_Exhaustion_CVE_2025_58181_T1499
+27. Grafana_Enterprise_Privilege_Escalation_CVE_2025_41115_T1068
+28. HAProxy_Spawns_Suspicious_Process_T1190
+29. Harbor_Registry_Spawns_Suspicious_Process_T1190
+30. Java_SE_JSSE_Access_Control_Bypass_CVE_2025_21587_T1190
+31. Jenkins_Git_Parameter_Command_Injection_CVE_2025_53652_T1059
+32. Jetty_Path_Traversal_RCE_T1190
+33. Keycloak_Spawns_Suspicious_Process_T1190
+34. Kibana_Expr_Eval_RCE_CVE_2025_12735_T1190
+35. Kibana_Fleet_Resource_Exhaustion_CVE_2026_0528_T1499
+36. Kibana_Prototype_Pollution_Code_Injection_CVE_2024_12556_T1190
+37. Kibana_RCE_Prototype_Pollution_CVE_2025_25015_T1190
+38. Kubernetes_API_Server_Token_Theft_T1528
+39. Kubernetes_Ingress_Nginx_Config_Injection_RCE_CVE_2026_24512_T1190
+40. Kubernetes_IngressNightmare_RCE_CVE_2025_1974_T1190
+41. Kubernetes_Kubelet_API_Unauthorized_Access_T1609
+42. MariaDB_JSON_Schema_Crash_RCE_CVE_2026_32710_T1190
+43. MCP_Server_Command_Injection_CVE_2025_6514_T1059
+44. MCP_Server_Tool_Poisoning_Data_Exfiltration_T1071
+45. Memcached_Unauthorized_Access_T1190
+46. MinIO_Spawns_Suspicious_Process_T1190
+47. MongoDB_MongoBleed_Information_Leak_CVE_2025_14847_T1190
+48. MongoDB_Unauthorized_Data_Exfiltration_CVE_2025_14847_T1005
+49. MySQL_Server_Spawns_Suspicious_Process_T1190
+50. Nexus_Repository_Spawns_Suspicious_Process_T1190
+51. Nginx_UI_Spawns_Shell_Post_Exploitation_CVE_2026_27944_T1059_004
+52. NVIDIA_Container_Toolkit_Suspicious_Host_Mount_CVE_2025_23266_T1611
+53. Odoo_ERP_Spawns_Suspicious_Process_T1190
+54. PHP_FPM_Spawns_Suspicious_Process_T1190
+55. PostgreSQL_COPY_TO_PROGRAM_Execution_CVE_2025_1094_T1059_004
+56. PostgreSQL_SQL_Injection_RCE_CVE_2025_1094_T1190
+57. RabbitMQ_Erlang_OTP_SSH_RCE_CVE_2025_32433_T1190
+58. Redis_Lua_UAF_RCE_CVE_2025_49844_T1190
+59. Redis_Output_Buffer_DoS_CVE_2025_21605_T1499
+60. Runc_Masked_Path_Symlink_Container_Escape_CVE_2025_31133_T1611
+61. Sentry_Spawns_Suspicious_Process_T1190
+62. SonarQube_Scanner_Code_Execution_CVE_2025_58178_T1190
+63. Spring_Boot_Actuator_RCE_T1190
+64. Tekton_Pipeline_Resolver_DoS_CVE_2026_33022_T1499
+65. Traefik_Spawns_Suspicious_Process_T1190
+66. Varnish_Cache_Spawns_Suspicious_Process_T1190
+67. Vault_Arbitrary_Code_Execution_CVE_2025_6000_T1059
+68. Vault_LDAP_Auth_Bypass_CVE_2025_13357_T1078
+69. WordPress_PHP_Code_Injection_RCE_CVE_2025_39601_T1190
+
+YAMLS IN FOLDER (69 total):
+1. apache-airflow-edge-provider-rce-cve-2025-67895.yaml ✓
+2. apache-httpd-tls-access-bypass-cve-2025-23048.yaml ✓
+3. apache-kafka-oauth-jndi-rce-cve-2025-27817.yaml ✓
+4. apache-solr-rce-configset-cve-2025-24814.yaml ✓
+5. apache-tomcat-deserialization-rce-cve-2025-24813.yaml ✓
+6. apache-zookeeper-spawns-suspicious-process.yaml ✓
+7. argocd-api-unauthorized-access-cve-2025-55190.yaml ✓
+8. consul-spawns-suspicious-process.yaml ✓
+9. coredns-acl-bypass-toctou-cve-2026-26017.yaml ✓
+10. coredns-remote-dos-cve-2026-26018.yaml ✓
+11. couchdb-spawns-suspicious-process.yaml ✓
+12. docker-container-cryptominer-deployment-cve-2025-9074.yaml ✓
+13. docker-container-escape-via-engine-api-cve-2025-9074.yaml ✓
+14. docker-model-runner-flag-injection-cve-2026-28400.yaml ✓
+15. docker-unauthenticated-engine-api-access-cve-2025-9074.yaml ✓
+16. elasticsearch-spawns-suspicious-process.yaml ✓
+17. envoy-istio-request-smuggling-cve-2025-66220.yaml ✓
+18. ghost-cms-spawns-suspicious-process.yaml ✓
+19. gitea-spawns-suspicious-process.yaml ✓
+20. github-actions-runner-spawns-suspicious-process.yaml ✓
+21. gitlab-runner-spawns-suspicious-process.yaml ✓
+22. gitlab-saml-auth-bypass-cve-2025-25291.yaml ✓
+23. glibc-dns-memory-leak-cve-2026-0915.yaml ✓
+24. glibc-heap-corruption-memalign-cve-2026-0861.yaml ✓
+25. golang-ssh-agent-malformed-identity-dos-cve-2025-47914.yaml ✓
+26. golang-ssh-gssapi-memory-exhaustion-cve-2025-58181.yaml ✓
+27. grafana-enterprise-privilege-escalation-cve-2025-41115.yaml ✓
+28. haproxy-spawns-suspicious-process.yaml ✓
+29. harbor-registry-spawns-suspicious-process.yaml ✓
+30. java-se-jsse-access-control-bypass-cve-2025-21587.yaml ✓
+31. jenkins-git-parameter-command-injection-cve-2025-53652.yaml ✓
+32. jetty-path-traversal-rce.yaml ✓
+33. keycloak-spawns-suspicious-process.yaml ✓
+34. kibana-expr-eval-rce-cve-2025-12735.yaml ✓
+35. kibana-fleet-resource-exhaustion-cve-2026-0528.yaml ✓
+36. kibana-prototype-pollution-code-injection-cve-2024-12556.yaml ✓
+37. kibana-rce-prototype-pollution-cve-2025-25015.yaml ✓
+38. kubernetes-api-server-token-theft.yaml ✓
+39. kubernetes-ingress-nginx-config-injection-rce-cve-2026-24512.yaml ✓
+40. kubernetes-ingressnightmare-rce-cve-2025-1974.yaml ✓
+41. kubernetes-kubelet-api-unauthorized-access.yaml ✓
+42. mariadb-json-schema-crash-rce-cve-2026-32710.yaml ✓
+43. mcp-server-command-injection-cve-2025-6514.yaml ✓ [NEWLY CREATED]
+44. mcp-server-tool-poisoning-data-exfiltration.yaml ✓
+45. memcached-unauthorized-access.yaml ✓
+46. minio-spawns-suspicious-process.yaml ✓
+47. mongodb-mongobleed-information-leak-cve-2025-14847.yaml ✓
+48. mongodb-unauthorized-data-exfiltration-cve-2025-14847.yaml ✓
+49. mysql-server-spawns-suspicious-process.yaml ✓
+50. nexus-repository-spawns-suspicious-process.yaml ✓
+51. nginx-ui-spawns-shell-post-exploitation-cve-2026-27944.yaml ✓
+52. nvidia-container-toolkit-suspicious-host-mount-cve-2025-23266.yaml ✓
+53. odoo-erp-spawns-suspicious-process.yaml ✓
+54. php-fpm-spawns-suspicious-process.yaml ✓
+55. postgresql-copy-to-program-execution-cve-2025-1094.yaml ✓
+56. postgresql-sql-injection-rce-cve-2025-1094.yaml ✓
+57. rabbitmq-erlang-otp-ssh-rce-cve-2025-32433.yaml ✓ [NEWLY CREATED]
+58. redis-lua-uaf-rce-cve-2025-49844.yaml ✓
+59. redis-output-buffer-dos-cve-2025-21605.yaml ✓
+60. runc-masked-path-symlink-container-escape-cve-2025-31133.yaml ✓
+61. sentry-spawns-suspicious-process.yaml ✓
+62. sonarqube-scanner-code-execution-cve-2025-58178.yaml ✓
+63. spring-boot-actuator-rce.yaml ✓
+64. tekton-pipeline-resolver-dos-cve-2026-33022.yaml ✓
+65. traefik-spawns-suspicious-process.yaml ✓
+66. varnish-cache-spawns-suspicious-process.yaml ✓
+67. vault-arbitrary-code-execution-cve-2025-6000.yaml ✓
+68. vault-ldap-auth-bypass-cve-2025-13357.yaml ✓
+69. wordpress-php-code-injection-rce-cve-2025-39601.yaml ✓ [NEWLY CREATED]
+
+RESULT 0.9.13:
+✅ 69 YAMLs - ALL have matching rules
+✅ 69 Rules matched (out of 69 provided)
+✅ 100% COVERAGE - All rules have YAMLs!
+
+NEWLY CREATED YAMLs (3):
+- mcp-server-command-injection-cve-2025-6514.yaml
+- rabbitmq-erlang-otp-ssh-rce-cve-2025-32433.yaml
+- wordpress-php-code-injection-rce-cve-2025-39601.yaml
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+0.9.12_experimental:
+  ✅ 33 YAMLs with matching rules
+  ✅ 33 Rules (100% coverage)
+  ✅ 0 YAMLs to deprecate (already moved 6 to deprecated folder)
+
+0.9.13_experimental:
+  ✅ 69 YAMLs with matching rules
+  ✅ 69 Rules (100% coverage - includes GoLang_SSH rule)
+  ✅ 3 new YAMLs created successfully
+
+Total Active YAMLs: 102 (33 + 69)
+Total Deprecated YAMLs: 6
+Total Unique Rules Covered: 102 (33 + 69)
+
+STATUS: ✅ ALL VERIFICATION COMPLETE - 100% COVERAGE IN BOTH FOLDERS

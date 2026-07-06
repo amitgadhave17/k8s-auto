@@ -1,0 +1,140 @@
+ANALYSIS: 0.9.12_experimental YAMLs vs Rules
+================================================
+
+RULES PROVIDED (33 total):
+1. Cloud_Credentials_Accessed_By_Network_Utility_T1552_005
+2. Compiler_Executed_In_Container_T1027_004
+3. Container_Escape_Using_RUNC_T1611
+4. Container_Management_Utility_In_Container_T1609
+5. DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016
+6. Db_Program_Spawned_Process_T1210
+7. Decoding_Payload_In_Container_T1132
+8. Defense_Evasion_Via_Rootkit_T1222_002
+9. Diamorphine_Process_Hiding_T1564
+10. Dump_Memory_Utilities_T1003
+11. Exploit_Vsftpd_Vulnerability_T1190
+12. File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002
+13. Gdb_Executed_In_Container_T1055
+14. Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004
+15. Insmod_Executed_In_Container_T1014
+16. Known_Cryptominer_Process_Executed_T1496
+17. Launch_Remote_File_Copy_Tools_In_Container_T1021
+18. Local_Account_Password_Binary_Execution_T1098_007
+19. Log_File_Symlink_To_Null_T1070_002
+20. Network_Traffic_Capture_Via_CAP_NET_RAW_T1040
+21. Potential_Privilege_Escalation_Via_Linux_DAC_Permissions_T1068
+22. Process_Capability_Enumeration_T1057
+23. Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007
+24. Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105
+25. Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190
+26. Remove_Bulk_Data_From_Disk_T1485
+27. Reverse_Shell_From_Web_Server_T1059
+28. Root_Shell_Via_Sudo_CVE_2025_32463_T1548_003
+29. Sensitive_Files_Compression_Inside_A_Container_T1552_003
+30. Shell_Spawned_By_Untrusted_Service_T1059_004
+31. Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003
+32. Suspicious_Network_Utility_Executed_T1016
+33. User_Mgmt_Binaries_T1098
+
+YAMLS IN 0.9.12_experimental (39 total):
+1. basic-interactive-reconnaissance.yaml
+2. cloud-credentials-accessed-by-network-utility.yaml
+3. compiler-executed-in-container.yaml
+4. container-escape-using-runc.yaml
+5. container-management-utility-in-container.yaml
+6. db-program-spawned-process.yaml
+7. decoding-payload-in-container.yaml
+8. defense-evasion-via-rootkit.yaml
+9. diamorphine-process-hiding.yaml
+10. dns-lookup-for-often-security-tool-domain-detected.yaml
+11. dump-memory-utilities.yaml
+12. exploit-log4j-vulnerability-cve-2021-44832.yaml
+13. exploit-vsftpd-vulnerability.yaml
+14. file-made-executable-via-chmod-inside-a-container.yaml
+15. gdb-executed-in-container.yaml
+16. ingress-nginx-spawning-shell-possible-cve-2024-7646-exploitation.yaml
+17. insmod-executed-in-container.yaml
+18. known-cryptominer-process-executed.yaml
+19. launch-ingress-remote-file-copy-tools-in-container.yaml
+20. launch-remote-file-copy-tools-in-container.yaml
+21. local-account-password-binary-execution.yaml
+22. log-file-symlink-to-null.yaml
+23. network-traffic-capture-via-cap-net-raw.yaml
+24. potential-privilege-escalation-via-linux-dac-permissions.yaml
+25. process-capability-enumeration.yaml
+26. redis-cli-eval-script-usage-possible-cve-2025-49844-attempt.yaml
+27. redis-server-launches-suspicious-tooling-possible-cve-2025-49844-exploitation.yaml
+28. redis-xackdel-with-large-ids-count-possible-cve-2025-62507-attempt.yaml
+29. remove-bulk-data-from-disk.yaml
+30. reverse-shell-from-web-server.yaml
+31. root-shell-via-sudo-cve-2025-32463.yaml
+32. sensitive-files-compression-inside-a-container.yaml
+33. shell-spawned-by-untrusted-service.yaml
+34. ssh-process-launched-from-inside-a-container.yaml
+35. sudo-chroot-privilege-escalation-cve-2025-32463.yaml
+36. suspicious-network-utility-executed.yaml
+37. user-mgmt-binaries.yaml
+38. web-server-spawned-shell.yaml
+39. web-server-spawned-suspicious-child-process.yaml
+
+================================================
+MATCHING ANALYSIS:
+================================================
+
+✓ YAMLS WITH MATCHING RULES (33):
+1. cloud-credentials-accessed-by-network-utility.yaml → Cloud_Credentials_Accessed_By_Network_Utility_T1552_005
+2. compiler-executed-in-container.yaml → Compiler_Executed_In_Container_T1027_004
+3. container-escape-using-runc.yaml → Container_Escape_Using_RUNC_T1611
+4. container-management-utility-in-container.yaml → Container_Management_Utility_In_Container_T1609
+5. dns-lookup-for-often-security-tool-domain-detected.yaml → DNS_Lookup_For_Often_Security_Tool_Domain_Detected_T1016
+6. db-program-spawned-process.yaml → Db_Program_Spawned_Process_T1210
+7. decoding-payload-in-container.yaml → Decoding_Payload_In_Container_T1132
+8. defense-evasion-via-rootkit.yaml → Defense_Evasion_Via_Rootkit_T1222_002
+9. diamorphine-process-hiding.yaml → Diamorphine_Process_Hiding_T1564
+10. dump-memory-utilities.yaml → Dump_Memory_Utilities_T1003
+11. exploit-vsftpd-vulnerability.yaml → Exploit_Vsftpd_Vulnerability_T1190
+12. file-made-executable-via-chmod-inside-a-container.yaml → File_Made_Executable_Via_Chmod_Inside_A_Container_T1222_002
+13. gdb-executed-in-container.yaml → Gdb_Executed_In_Container_T1055
+14. ingress-nginx-spawning-shell-possible-cve-2024-7646-exploitation.yaml → Ingress_Nginx_Spawning_Shell_Possible_CVE_2024_7646_Exploitation_T1059_004
+15. insmod-executed-in-container.yaml → Insmod_Executed_In_Container_T1014
+16. known-cryptominer-process-executed.yaml → Known_Cryptominer_Process_Executed_T1496
+17. launch-remote-file-copy-tools-in-container.yaml → Launch_Remote_File_Copy_Tools_In_Container_T1021
+18. local-account-password-binary-execution.yaml → Local_Account_Password_Binary_Execution_T1098_007
+19. log-file-symlink-to-null.yaml → Log_File_Symlink_To_Null_T1070_002
+20. network-traffic-capture-via-cap-net-raw.yaml → Network_Traffic_Capture_Via_CAP_NET_RAW_T1040
+21. potential-privilege-escalation-via-linux-dac-permissions.yaml → Potential_Privilege_Escalation_Via_Linux_DAC_Permissions_T1068
+22. process-capability-enumeration.yaml → Process_Capability_Enumeration_T1057
+23. redis-cli-eval-script-usage-possible-cve-2025-49844-attempt.yaml → Redis_Cli_EVAL_SCRIPT_Usage_Possible_CVE_2025_49844_Attempt_T1059_007
+24. redis-server-launches-suspicious-tooling-possible-cve-2025-49844-exploitation.yaml → Redis_Server_Launches_Suspicious_Tooling_Possible_CVE_2025_49844_Exploitation_T1105
+25. redis-xackdel-with-large-ids-count-possible-cve-2025-62507-attempt.yaml → Redis_XACKDEL_With_Large_IDS_Count_Possible_CVE_2025_62507_Attempt_T1190
+26. remove-bulk-data-from-disk.yaml → Remove_Bulk_Data_From_Disk_T1485
+27. reverse-shell-from-web-server.yaml → Reverse_Shell_From_Web_Server_T1059
+28. root-shell-via-sudo-cve-2025-32463.yaml → Root_Shell_Via_Sudo_CVE_2025_32463_T1548_003
+29. sensitive-files-compression-inside-a-container.yaml → Sensitive_Files_Compression_Inside_A_Container_T1552_003
+30. shell-spawned-by-untrusted-service.yaml → Shell_Spawned_By_Untrusted_Service_T1059_004
+31. sudo-chroot-privilege-escalation-cve-2025-32463.yaml → Sudo_Chroot_Privilege_Escalation_CVE_2025_32463_T1548_003
+32. suspicious-network-utility-executed.yaml → Suspicious_Network_Utility_Executed_T1016
+33. user-mgmt-binaries.yaml → User_Mgmt_Binaries_T1098
+
+✗ YAMLS WITHOUT MATCHING RULES - TO BE DEPRECATED (6):
+1. basic-interactive-reconnaissance.yaml
+2. exploit-log4j-vulnerability-cve-2021-44832.yaml
+3. launch-ingress-remote-file-copy-tools-in-container.yaml
+4. ssh-process-launched-from-inside-a-container.yaml
+5. web-server-spawned-shell.yaml
+6. web-server-spawned-suspicious-child-process.yaml
+
+Note: There's a duplicate - user-mgmt-binaries.yaml matches both User_Mgmt_Binaries_T1098 (counted above)
+
+✗ RULES WITHOUT MATCHING YAMLS (0):
+NONE - All 33 rules have matching YAMLs!
+
+================================================
+ACTION REQUIRED:
+Move these 6 YAMLs to yamls/deprecated:
+1. basic-interactive-reconnaissance.yaml
+2. exploit-log4j-vulnerability-cve-2021-44832.yaml
+3. launch-ingress-remote-file-copy-tools-in-container.yaml
+4. ssh-process-launched-from-inside-a-container.yaml
+5. web-server-spawned-shell.yaml
+6. web-server-spawned-suspicious-child-process.yaml
